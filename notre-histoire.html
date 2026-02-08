@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Notre histoire - Graine de Baobab</title>
   <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrousel Moments Forts</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <nav class="site-nav" aria-label="Navigation principale">
@@ -35,13 +38,13 @@
         <li class="nav-item dropdown">
           <button class="dropbtn" aria-expanded="false">S'engager</button>
           <ul class="dropdown-menu">
-            <li><a href="faire-un-don.html">Faire un don</a></li>
+            <li><a href="https://www.helloasso.com/associations/ong-graine-de-baobab#donation">Faire un don</a></li>
             <li><a href="nous-rejoindre.html">Nous rejoindre</a></li>
           </ul>
         </li>
       </ul>
       <div class="nav-ctas">
-        <a class="btn btn-primary" href="faire-un-don.html">Faire un don</a>
+        <a class="btn btn-primary" href="https://www.helloasso.com/associations/ong-graine-de-baobab#donation">Faire un don</a>
         <a class="btn btn-secondary" href="contact.html">Nous contacter</a>
       </div>
       <button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
@@ -49,10 +52,108 @@
   </nav>
 
   <main>
-    <h1>Notre histoire</h1>
-    <p>Chronologie et événements marquants de l'association.</p>
+    <section class="section section--light" style="padding-top: 0;">
+      <div class="section-content">
+        <h1 class="hero-title" style="font-family: 'Playfair Display', Georgia, serif; color: #5e3023; font-weight: 900; font-size: 3.5rem; letter-spacing: 0.125rem; margin: 0 0 0rem;">Notre histoire</h1>
+        <br>
+        <p>
+          Graine de Baobab est née au Bénin pour soutenir les populations vulnérables du nord du pays, grâce à l’engagement de bénévoles et partenaires locaux. Depuis, l’association œuvre pour renforcer l’autonomie des communautés et améliorer leurs conditions de vie.
+        </p>
+      </div>
+    </section>
+    <div class="timeline-container">
+        <h2>Moments Forts</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">2011</div>
+                <div class="timeline-content">
+                    <h3>Les fondations à Natitingou</h3>
+                    <p>Graine de Baobab voit le jour à Natitingou, au cœur des montagnes du nord Bénin. C’est le point de départ de l’engagement de l’ONG en faveur de l’éducation, de la nutrition et du tourisme solidaire dans la région de l’Atacora.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2014</div>
+                <div class="timeline-content">
+                    <h3>Déclaration officielle au Bénin</h3>
+                    <p>L’association est officiellement déclarée au Bénin, consolidant ainsi sa présence juridique et son action locale.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2017</div>
+                <div class="timeline-content">
+                    <h3>Reconnaissance en France</h3>
+                    <p>Graine de Baobab – Solidarité France Bénin est déclarée en France et publiée au Journal Officiel, ce qui lui permet notamment de délivrer des reçus fiscaux pour les donateurs et de mobiliser des soutiens plus larges.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2018</div>
+                <div class="timeline-content">
+                    <h3>Reconnaissance des cours du soir</h3>
+                    <p>Les cours du soir organisés par l’ONG obtiennent une reconnaissance officielle par l’État béninois en tant qu’Université Populaire, renforçant ainsi l’impact éducatif de l’association.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2015-2024</div>
+                <div class="timeline-content">
+                    <h3>Éducation et insertion durable</h3>
+                    <p>Depuis 2015, l’Université Populaire de Graine de Baobab à Natitingou a aidé plus de 1 000 jeunes déscolarisés et analphabètes à reprendre une scolarité et à se former.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2018</div>
+                <div class="timeline-content">
+                    <h3>Lancement du programme nutrition</h3>
+                    <p>L’association lance un programme de nutrition pour lutter contre la malnutrition infantile et soutenir les femmes enceintes ou allaitantes, avec des campagnes de dépistage, des séances de sensibilisation et des distributions de kits nutritifs.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2024</div>
+                <div class="timeline-content">
+                    <h3>Compétences numériques</h3>
+                    <p>Un projet de développement des compétences numériques est lancé pour donner aux jeunes des outils essentiels pour l’emploi et l’entrepreneuriat dans un monde de plus en plus connecté.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2024</div>
+                <div class="timeline-content">
+                    <h3>Rapport d’activités consolidé</h3>
+                    <p>Le rapport d’activité de l’année met en lumière l’impact concret de l’ONG dans l’éducation, la nutrition et l’insertion sociale au Bénin, avec des résultats tangibles auprès des jeunes et des familles.</p>
+                </div>
+            </div>
+        </div>
+    </div>
   </main>
 
   <script src="js/navbar.js"></script>
+  <script>
+    document.querySelector('.timeline').addEventListener('touchstart', handleTouchStart, false);
+    document.querySelector('.timeline').addEventListener('touchmove', handleTouchMove, false);
+
+    let xDown = null;
+
+    function handleTouchStart(evt) {
+        xDown = evt.touches[0].clientX;
+    }
+
+    function handleTouchMove(evt) {
+        if (!xDown) {
+            return;
+        }
+
+        let xUp = evt.touches[0].clientX;
+        let xDiff = xDown - xUp;
+
+        if (xDiff > 5) {
+            /* Défilement vers la gauche */
+            evt.currentTarget.scrollLeft += 20;
+        } else if (xDiff < -5) {
+            /* Défilement vers la droite */
+            evt.currentTarget.scrollLeft -= 20;
+        }
+
+        xDown = null;
+    }
+</script>
+
 </body>
 </html>

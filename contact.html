@@ -2,8 +2,10 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Graine de Baobab</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -41,14 +43,14 @@
         <li class="nav-item dropdown">
           <button class="dropbtn" aria-expanded="false">S'engager</button>
           <ul class="dropdown-menu" aria-label="Sous-menu S'engager">
-            <li><a href="faire-un-don.html">Faire un don</a></li>
+            <li><a href="https://www.helloasso.com/associations/ong-graine-de-baobab#donation" target="_blank" rel="noopener noreferrer">Faire un don</a></li>
             <li><a href="nous-rejoindre.html">Nous rejoindre</a></li>
           </ul>
         </li>
       </ul>
 
       <div class="nav-ctas">
-        <a class="btn btn-primary" href="faire-un-don.html">Faire un don</a>
+        <a class="btn btn-primary" href="https://www.helloasso.com/associations/ong-graine-de-baobab#donation" target="_blank" rel="noopener noreferrer">Faire un don</a>
         <a class="btn btn-secondary" href="contact.html">Nous contacter</a>
       </div>
 
@@ -57,8 +59,132 @@
   </nav>
 
   <main>
-    <h1>Contact</h1>
-    <p>Formulaire de contact à venir.</p>
+    <section class="section section--light" style="padding-top: 0;">
+      <div class="section-content">
+        <h1 class="hero-title" style="font-family: 'Playfair Display', Georgia, serif; color: #5e3023; font-weight: 900; font-size: 3.5rem; letter-spacing: 0.125rem; margin: 0 0 0rem;">Nous contacter
+        </h1>
+        <br>
+        <p>
+          Vous avez des questions, souhaitez en savoir plus sur nos actions ou discuter d'une collaboration ?
+        </p>
+        <p>
+          N'hésitez pas à nous contacter via le formulaire plus bas ou par email à <a href="mailto:grainedebaobab.ong@gmail.com" class="contact-email-link">grainedebaobab.ong@gmail.com</a>.
+        </p>
+      </div>
+    </section>
+
+      <div class="contact-cards-container">
+        <div class="contact-card-item">
+          <div class="contact-card-header">
+            <i class="fas fa-map-marked-alt contact-icon"></i>
+            <h2 class="contact-location-title">En France</h2>
+          </div>
+          <div class="contact-card-body">
+            <div class="contact-person-info">
+              <h3 class="contact-person-name">Antoine Jarrige</h3>
+              <p class="contact-person-role">Co-fondateur et Président
+              </p>
+              <div class="contact-info-item">
+                <i class="fas fa-envelope contact-info-icon"></i>
+                <p><a href="mailto:jarrige.antoine@gmail.com" class="contact-email-link">jarrige.antoine@gmail.com</a></p>
+              </div>
+            </div>
+            <div class="contact-person-info">
+              <h3 class="contact-person-name">Laurent Cochereau</h3>
+              <p class="contact-person-role">Trésorier</p>
+              <div class="contact-info-item">
+                <i class="fas fa-envelope contact-info-icon"></i>
+                <p><a href="mailto:asmaalaurent@gmail.com" class="contact-email-link">asmaalaurent@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-card-item">
+          <div class="contact-card-header">
+            <i class="fas fa-globe-africa contact-icon"></i>
+            <h2 class="contact-location-title">Au Bénin</h2>
+          </div>
+          <div class="contact-card-body">
+            <div class="contact-person-info">
+              <h3 class="contact-person-name">Salami Adam (surnommé "Sam")</h3>
+              <p class="contact-person-role">Co-fondateur et Directeur de projet au Bénin</p>
+              <div class="contact-info-item" style="margin-bottom: 0;">
+                <i class="fas fa-envelope contact-info-icon"></i>
+                <p><a href="mailto:salami_adam@yahoo.fr" class="contact-email-link">salami_adam@yahoo.fr</a></p>
+              </div>
+              <div class="contact-info-item">
+                <i class="fas fa-envelope contact-info-icon"></i>
+                <p><a href="mailto:adamsalami99@gmail.com" class="contact-email-link">adamsalami99@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-content-container">
+        <div class="contact-form-container">
+          <h2 class="contact-form-title">Envoyez-nous un message</h2>
+          <div id="form-message" class="form-message" style="display: none; text-align: center; margin: 20px 0; padding: 15px; border-radius: var(--radius);"></div>
+          <form class="contact-form" action="https://formsubmit.co/adbenichou@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="merci.html">
+            <div class="form-input-group">
+              <label for="name" class="form-input-label">Nom</label>
+              <input type="text" id="name" name="name" class="form-input-field" required>
+            </div>
+            <div class="form-input-group">
+              <label for="email" class="form-input-label">Email</label>
+              <input type="email" id="email" name="email" class="form-input-field" required>
+            </div>
+            <div class="form-input-group">
+              <label for="subject" class="form-input-label">Sujet</label>
+              <input type="text" id="subject" name="subject" class="form-input-field" required>
+            </div>
+            <div class="form-input-group">
+              <label for="message" class="form-input-label">Message</label>
+              <textarea id="message" name="message" class="form-textarea-field" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary contact-submit-btn">Envoyer</button>
+          </form>
+        </div>
+
+        <script>
+    document.querySelector('.contact-form').addEventListener('submit', function(e) {
+      e.preventDefault(); // Empêche le rechargement de la page
+      const form = e.target;
+      const formMessage = document.getElementById('form-message');
+
+      // Affiche un message de chargement avec une icône
+      formMessage.style.display = 'block';
+      formMessage.innerHTML = '<i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 10px; color: var(--brand-green);"></i><p>Envoi en cours...</p>';
+      formMessage.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+      formMessage.style.color = 'var(--brand-brown)';
+
+      // Envoie le formulaire avec fetch
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form)
+      })
+      .then(response => {
+        if (response.ok) {
+          // Succès : affiche un message de confirmation
+          formMessage.innerHTML = '<i class="fas fa-check-circle" style="font-size: 2rem; margin-bottom: 10px; color: var(--brand-green);"></i><p>Merci pour votre message ! Nous vous répondrons bientôt.</p>';
+          form.reset(); // Réinitialise le formulaire
+        } else {
+          throw new Error('Erreur lors de l\'envoi');
+        }
+      })
+      .catch(error => {
+        // Erreur : affiche un message d'erreur
+        formMessage.innerHTML = '<i class="fas fa-exclamation-circle" style="font-size: 2rem; margin-bottom: 10px; color: #d32f2f;"></i><p>Oops ! Une erreur est survenue. Veuillez réessayer plus tard.</p>';
+        console.error('Error:', error);
+      });
+    });
+  </script>
+
+      </div>
+    </section>
   </main>
 
   <script src="js/navbar.js"></script>
