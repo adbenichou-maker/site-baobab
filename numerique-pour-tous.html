@@ -101,6 +101,66 @@
   </div>
 </section>
 </main>
+  <section class="newsletter-section">
+    <div class="newsletter-container">
+      <div class="newsletter-content">
+        <h2 class="newsletter-title">Restez informé</h2>
+        <p class="newsletter-subtitle">Recevez nos actualités et événements directement dans votre boîte mail</p>
+
+        <!-- Message de confirmation -->
+        <div id="newsletter-message" class="newsletter-message" style="display: none;"></div>
+
+        <form class="newsletter-form" action="https://formsubmit.co/asmaalaurent@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="Nouvel abonnement à la newsletter Graine de Baobab">
+          <input type="hidden" name="_autoresponse" value="Merci pour votre abonnement à notre newsletter! Nous vous enverrons nos prochaines actualités très bientôt.">
+
+          <div class="newsletter-form-group">
+            <input type="email" class="newsletter-input" placeholder="Votre adresse email" name="email" required>
+            <button type="submit" class="newsletter-button">S'abonner</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript pour gérer l'envoi du formulaire -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const newsletterForm = document.querySelector('.newsletter-form');
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const form = e.target;
+          const emailInput = form.querySelector('.newsletter-input');
+          const messageElement = document.getElementById('newsletter-message');
+
+          messageElement.innerHTML = '<i class="fas fa-spinner fa-spin" style="font-size: 1.5rem; margin-right: 10px; color: var(--brand-green);"></i> Envoi en cours...';
+          messageElement.style.display = 'block';
+
+          fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form)
+          })
+          .then(response => {
+            if (response.ok) {
+              messageElement.innerHTML = '<i class="fas fa-check-circle" style="font-size: 1.5rem; margin-right: 10px; color: var(--brand-green);"></i> Merci pour votre abonnement ! Nous vous enverrons nos prochaines actualités très bientôt.';
+              messageElement.classList.add('success');
+              emailInput.value = '';
+            } else {
+              throw new Error('Erreur lors de l\'envoi');
+            }
+          })
+          .catch(error => {
+            messageElement.innerHTML = '<i class="fas fa-exclamation-circle" style="font-size: 1.5rem; margin-right: 10px; color: #d32f2f;"></i> Oops ! Une erreur est survenue. Veuillez réessayer plus tard.';
+            messageElement.classList.add('error');
+            console.error('Error:', error);
+          });
+        });
+      }
+    });
+  </script>
+
   <script src="js/navbar.js"></script>
 </body>
 </html>

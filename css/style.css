@@ -1530,3 +1530,107 @@ body {
   }
 }
 
+/* Section Newsletter */
+    .newsletter-section {
+      width: 100%;
+      background-color: var(--brand-brown);
+      color: white;
+      padding: 40px 0;
+    }
+
+    .newsletter-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .newsletter-content {
+      text-align: center;
+    }
+
+    .newsletter-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .newsletter-subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .newsletter-form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form-group {
+      display: flex;
+      gap: 0;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      font-size: 1rem;
+      min-width: 250px;
+    }
+
+    .newsletter-button {
+      background-color: var(--brand-green);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 0 4px 4px 0;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .newsletter-button:hover {
+      background-color: #5a7525;
+    }
+
+    .newsletter-message {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: var(--brand-brown);
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .newsletter-message.success {
+      display: block;
+      background-color: rgba(107, 138, 47, 0.2);
+      color: var(--brand-green);
+    }
+
+    .newsletter-message.error {
+      display: block;
+      background-color: rgba(221, 47, 47, 0.2);
+      color: #d32f2f;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .newsletter-form-group {
+        flex-direction: column;
+      }
+
+      .newsletter-input,
+      .newsletter-button {
+        border-radius: 4px;
+        width: 100%;
+      }
+
+      .newsletter-button {
+        margin-top: 10px;
+      }
+    }
