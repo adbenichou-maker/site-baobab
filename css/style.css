@@ -47,6 +47,14 @@ main{padding:1.75rem;max-width:var(--max-width);margin:0rem auto}
 .btn-primary{background:var(--brand-light-brown);color:#fff;box-shadow:0 6px 18px rgba(139,94,52,0.18)}
 .btn-success{background:var(--brand-green);color:#fff}
 
+/* Hover / focus effects for top-right CTAs */
+.nav-ctas .btn{transition:transform .15s ease,box-shadow .15s ease,background-color .15s ease,color .15s ease}
+.nav-ctas .btn-primary:hover,.nav-ctas .btn-primary:focus{background:var(--brand-brown-dark);transform:translateY(-3px);box-shadow:0 14px 30px rgba(79,46,23,0.18)}
+.nav-ctas .btn-primary:active{transform:translateY(-1px)}
+.nav-ctas .btn-success:hover,.nav-ctas .btn-success:focus{background:#557824;transform:translateY(-3px);box-shadow:0 14px 30px rgba(86,122,40,0.18)}
+.nav-ctas .btn-success:active{transform:translateY(-1px)}
+.nav-ctas .btn:focus-visible{outline:3px solid rgba(106,138,47,0.15);outline-offset:4px}
+
 .nav-toggle{display:none;background:transparent;border:none;color:var(--brand-brown);font-size:1.375rem;padding:0.375rem}
 
 /* Hero */
