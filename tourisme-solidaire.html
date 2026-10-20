@@ -5,7 +5,13 @@
   <title>Tourisme solidaire au Bénin | Voyager & Agir – Graine de Baobab</title>
   <meta name="description" content="Partez en tourisme solidaire au Bénin avec Graine de Baobab. Rencontrez les communautés locales, participez aux projets humanitaires et découvrez le nord du Bénin.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
   <nav class="site-nav" aria-label="Navigation principale">
@@ -17,22 +23,20 @@
         <li class="nav-item dropdown"><button type="button" class="dropbtn">Le Bénin</button><ul class="dropdown-menu"><li><a href="infos-pratiques.html">Infos pratiques</a></li><li><a href="tourisme-solidaire.html">Tourisme solidaire</a></li></ul></li>
         <li class="nav-item dropdown"><button type="button" class="dropbtn">S'engager</button><ul class="dropdown-menu"><li><a href="https://www.helloasso.com/associations/ong-graine-de-baobab#donation" target="_blank" rel="noopener noreferrer">Faire un don</a></li><li><a href="nous-rejoindre.html">Nous rejoindre</a></li></ul></li>
       </ul>
-      <div class="nav-ctas"><a class="btn btn-success" href="https://www.helloasso.com/associations/ong-graine-de-baobab#donation" target="_blank" rel="noopener noreferrer">Faire un don</a><a class="btn btn-primaryhref="contact.html">Nous contacter</a></div>
+      <div class="nav-ctas"><a class="btn btn-secondary" href="https://www.helloasso.com/associations/ong-graine-de-baobab#donation" target="_blank" rel="noopener noreferrer">Faire un don</a><a class="btn btn-primary" href="contact.html">Nous contacter</a></div>
       <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-controls="nav-menu" aria-expanded="false">☰</button>
     </div>
   </nav>
   <main>
-    <section class="section section--light" style="padding-top: 0;">
+    <section class="section section--light section--intro">
       <div class="section-content">
-        <h1 class="hero-title" style="font-family: 'Playfair Display', Georgia, serif; color: #5e3023; font-weight: 900; font-size: 3.5rem; letter-spacing: 0.125rem; margin: 0 0 0rem;">Tourisme Solidaire
+        <h1 class="hero-title">Tourisme Solidaire
         </h1>
-        <br>
       </div>
     </section>
     <section class="section section--light">
-      <section class="education-project" style="padding-top: 0px;">
-        <section class="summary" style="text-align: center;margin-left: 150px;
-  margin-right: 150px;">
+      <section class="container">
+        <section class="card summary text-center">
           <h2>Sommaire</h2>
           <ul>
             <li><a href="#presentation">Présentation du séjour</a></li>
@@ -42,7 +46,7 @@
           </ul>
         </section>
 
-        <section id="presentation" class="presentation-section">
+        <section id="presentation" class="container text-center">
           <h2>Présentation du Séjour</h2>
           <div class="presentation-content">
             <p>
@@ -57,45 +61,45 @@
           </div>
         </section>
 
-        <section id="infos-pratiques" class="infos-section">
+        <section id="infos-pratiques" class="container text-center">
           <h2>Informations Pratiques</h2>
-          <div class="infos-container">
-            <div class="info-card">
+          <div class="grid">
+            <div class="card info-card">
               <i class="fas fa-calendar-alt"></i>
               <h3>Durée</h3>
               <p>14 jours dont 13 jours sur place (dont 10 jours de balades et randonnées)</p>
             </div>
-            <div class="info-card">
+            <div class="card info-card">
               <i class="fas fa-euro-sign"></i>
               <h3>Prix</h3>
               <p>À partir de 995 € par personne</p>
             </div>
-            <div class="info-card">
+            <div class="card info-card">
               <i class="fas fa-utensils"></i>
               <h3>Repas et hébergement</h3>
               <p>Inclus</p>
             </div>
-            <div class="info-card">
+            <div class="card info-card">
               <i class="fas fa-child"></i>
               <h3>Âge minimum</h3>
               <p>8 ans (accompagnement parental obligatoire jusqu’à 16 ans)</p>
             </div>
-            <div class="info-card">
+            <div class="card info-card">
               <i class="fas fa-users"></i>
               <h3>Groupe</h3>
               <p>De 1 à 10 personnes</p>
             </div>
-            <div class="info-card">
+            <div class="card info-card">
               <i class="fas fa-suitcase"></i>
               <h3>Portage</h3>
               <p>Affaires de la journée uniquement</p>
             </div>
-            <div class="info-card">
+            <div class="card info-card">
               <i class="fas fa-home"></i>
               <h3>Hébergements</h3>
               <p>Chez l’habitant, auberge, hôtel</p>
             </div>
-            <div class="info-card">
+            <div class="card info-card">
               <i class="fas fa-plane"></i>
               <h3>Vol international</h3>
               <p>Au départ de Paris ou Bruxelles (Air France)</p>
@@ -103,16 +107,16 @@
           </div>
         </section>
 
-        <section id="encadrement" class="encadrement-section">
+        <section id="encadrement" class="container text-center">
           <h2>Encadrement et Contacts</h2>
-          <div class="encadrement-container">
-            <div class="contact-card">
+          <div class="grid grid--wide">
+            <div class="card contact-card">
               <i class="fas fa-user"></i>
               <h3>Encadrement sur place</h3>
               <p><strong>Guide francophone:</strong> Salami ADAM</p>
               <p><strong>E-mail:</strong> adamsalami99@gmail.com</p>
             </div>
-            <div class="contact-card">
+            <div class="card contact-card">
               <i class="fas fa-user"></i>
               <h3>Contact en France</h3>
               <p><strong>Antoine JARRIGE</strong></p>
@@ -121,13 +125,13 @@
           </div>
         </section>
 
-        <section id="programme" class="programme-section">
+        <section id="programme" class="container text-center">
           <h2>Programme Type – 13 Jours de Découverte</h2>
           <div class="treasure-map">
             <div class="map-step">
               <div class="step-icon">🌍</div>
               <div class="step-date">Jour 1</div>
-              <div class="step-content">
+              <div class="card step-content">
                 <h3>France → Cotonou</h3>
                 <p>Vol international vers Cotonou. Accueil à l’aéroport à l’arrivée, généralement en fin de journée.</p>
               </div>
@@ -136,7 +140,7 @@
             <div class="map-step">
               <div class="step-icon">🏖️</div>
               <div class="step-date">Jour 2</div>
-              <div class="step-content">
+              <div class="card step-content">
                 <h3>Cotonou → Ouidah → Abomey</h3>
                 <p>Route par la route touristique des pêches avec pause plage et balade en pirogue dans la lagune. Découverte de Ouidah et marche guidée sur la route des esclaves jusqu’à la Porte du Non-Retour. Transfert vers Abomey via Lokossa, avec visite des potières et possible cérémonie vaudoun. Nuit à Abomey ou Ouidah.</p>
               </div>
@@ -145,7 +149,7 @@
             <div class="map-step">
               <div class="step-icon">🏛️</div>
               <div class="step-date">Jour 3</div>
-              <div class="step-content">
+              <div class="card step-content">
                 <h3>Abomey → Kamaté → Dassa</h3>
                 <p>Visite du musée d’Histoire d’Abomey et des palais royaux. Rencontres avec artisans et artistes locaux. Transfert vers Dassa avec visite guidée du village de Kamaté. Nuit en bivouac dans un centre de protection de la nature.</p>
               </div>
@@ -154,7 +158,7 @@
             <div class="map-step">
               <div class="step-icon">🏞️</div>
               <div class="step-date">Jour 4</div>
-              <div class="step-content">
+              <div class="card step-content">
                 <h3>Dassa → Natitingou</h3>
                 <p>Randonnée sur l’une des 41 collines de Dassa offrant une vue panoramique sur la vallée. Après le déjeuner, route vers Natitingou. Nuit à Dassa.</p>
               </div>
@@ -163,7 +167,7 @@
             <div class="map-step">
               <div class="step-icon">💦</div>
               <div class="step-date">Jour 5</div>
-              <div class="step-content">
+              <div class="card step-content">
                 <h3>Natitingou</h3>
                 <p>Randonnée vers les chutes de Kota (environ 5 h de marche) et baignade dans une piscine naturelle. Approvisionnement au marché local avant l’entrée dans la région de l’Atacora. Pique-nique à Kota, détente et nuit à Natitingou.</p>
               </div>
@@ -172,7 +176,7 @@
             <div class="map-step">
               <div class="step-icon">🏡</div>
               <div class="step-date">Jours 6 à 8</div>
-              <div class="step-content">
+              <div class="card step-content">
                 <h3>Koussoucoingou / Pays Somba / Parc de la Pendjari</h3>
                 <p>Randonnées quotidiennes dans les villages Otan-Maris à la découverte des tatas-somba, habitats traditionnels fortifiés. Participation possible à des rites et fêtes locales selon la période. Marchés, rencontres, baignades dans cascades et trous d’eau.</p>
                 <p>Le jour 8, dernière randonnée puis route vers Tanguiéta et entrée dans le parc de la Pendjari pour l’observation de la faune. Installation à l’hôtel de la Pendjari ou au lodge du parc.</p>
@@ -182,7 +186,7 @@
             <div class="map-step">
               <div class="step-icon">🦁</div>
               <div class="step-date">Jour 9</div>
-              <div class="step-content">
+              <div class="card step-content">
                 <h3>Parc de la Pendjari → Tanguiéta → Natitingou</h3>
                 <p>Safari matinal dans le parc (singes, antilopes, éléphants, buffles, parfois lions). Après le déjeuner, visite des chutes de Tanougou et baignade. Retour vers Natitingou pour la nuit.</p>
                 <p><em>NB : le parc est ouvert du 1er décembre à fin juillet. Un programme alternatif est proposé hors période.</em></p>
@@ -192,7 +196,7 @@
             <div class="map-step">
               <div class="step-icon">🔮</div>
               <div class="step-date">Jour 10</div>
-              <div class="step-content">
+              <div class="card step-content">
                 <h3>Natitingou → Dassa</h3>
                 <p>Long transfert vers le sud. Rencontre avec un prêtre du Fâ pour une lecture des oracles. Nuit à Dassa.</p>
               </div>
@@ -201,7 +205,7 @@
             <div class="map-step">
               <div class="step-icon">🚣</div>
               <div class="step-date">Jour 11</div>
-              <div class="step-content">
+              <div class="card step-content">
                 <h3>Dassa → Ganvié → Cotonou</h3>
                 <p>Route vers Ganvié, la cité lacustre sur pilotis, entre eau douce et eau salée. Visite du village et de quelques habitations. Nuit à Cotonou.</p>
               </div>
@@ -210,7 +214,7 @@
             <div class="map-step">
               <div class="step-icon">🏙️</div>
               <div class="step-date">Jour 12</div>
-              <div class="step-content">
+              <div class="card step-content">
                 <h3>Cotonou</h3>
                 <p>Journée libre dans la capitale économique, à organiser avec le guide.</p>
               </div>
@@ -219,7 +223,7 @@
             <div class="map-step">
               <div class="step-icon">✈️</div>
               <div class="step-date">Jour 13</div>
-              <div class="step-content">
+              <div class="card step-content">
                 <h3>Cotonou → France</h3>
                 <p>Temps d’échange autour du voyage, transfert à l’aéroport et vol retour vers la France.</p>
               </div>
@@ -237,7 +241,7 @@
         <p class="newsletter-subtitle">Recevez nos actualités et événements directement dans votre boîte mail</p>
 
         <!-- Message de confirmation -->
-        <div id="newsletter-message" class="newsletter-message" style="display: none;"></div>
+        <div id="newsletter-message" class="newsletter-message"></div>
 
         <form class="newsletter-form" action="https://formsubmit.co/asmaalaurent@gmail.com" method="POST">
           <input type="hidden" name="_captcha" value="false">
@@ -264,7 +268,7 @@
           const emailInput = form.querySelector('.newsletter-input');
           const messageElement = document.getElementById('newsletter-message');
 
-          messageElement.innerHTML = '<i class="fas fa-spinner fa-spin" style="font-size: 1.5rem; margin-right: 10px; color: var(--brand-green);"></i> Envoi en cours...';
+          messageElement.innerHTML = '<i class="fas fa-spinner fa-spin" style="font-size: 1.5rem; margin-right: 10px; color: var(--color-green);"></i> Envoi en cours...';
           messageElement.style.display = 'block';
 
           fetch(form.action, {
@@ -273,7 +277,7 @@
           })
           .then(response => {
             if (response.ok) {
-              messageElement.innerHTML = '<i class="fas fa-check-circle" style="font-size: 1.5rem; margin-right: 10px; color: var(--brand-green);"></i> Merci pour votre abonnement ! Nous vous enverrons nos prochaines actualités très bientôt.';
+              messageElement.innerHTML = '<i class="fas fa-check-circle" style="font-size: 1.5rem; margin-right: 10px; color: var(--color-green);"></i> Merci pour votre abonnement ! Nous vous enverrons nos prochaines actualités très bientôt.';
               messageElement.classList.add('success');
               emailInput.value = '';
             } else {
@@ -281,7 +285,7 @@
             }
           })
           .catch(error => {
-            messageElement.innerHTML = '<i class="fas fa-exclamation-circle" style="font-size: 1.5rem; margin-right: 10px; color: #d32f2f;"></i> Oops ! Une erreur est survenue. Veuillez réessayer plus tard.';
+            messageElement.innerHTML = '<i class="fas fa-exclamation-circle" style="font-size: 1.5rem; margin-right: 10px; color: var(--color-error);"></i> Oops ! Une erreur est survenue. Veuillez réessayer plus tard.';
             messageElement.classList.add('error');
             console.error('Error:', error);
           });

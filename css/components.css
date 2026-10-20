@@ -1,0 +1,616 @@
+/* ==========================================================================
+   COMPOSANTS — les "briques" réutilisables : boutons, cartes, tableaux, etc.
+   Chaque bloc est indépendant : tu peux le copier dans une nouvelle page
+   en réutilisant simplement les noms de classes.
+   ========================================================================== */
+
+/* ----- Boutons ----- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  padding: 0.625rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-text);
+  font-size: var(--text-base);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary { background: var(--color-terracotta); }
+.btn-primary:hover { background: var(--color-terracotta-dark); }
+
+.btn-secondary { background: var(--color-green); }
+.btn-secondary:hover { background: var(--color-green-dark); }
+
+/* ----- Cartes : bloc blanc arrondi ----- */
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Carte posée à l'intérieur d'une autre carte */
+.card--inset {
+  background: var(--color-cream);
+  border: 1px solid var(--color-border);
+  box-shadow: none;
+}
+
+.info-content .card--inset {
+  margin-bottom: var(--space-sm);
+}
+
+/* ----- Titres de sections ----- */
+.hero-title {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-md);
+}
+
+.section-title {
+  margin-bottom: var(--space-lg);
+}
+
+/* Titre centré sur la colonne de texte, à côté des photos (page Équipe) :
+   on réserve à gauche la largeur d'une photo (12,5rem) + l'espace (1,5rem) */
+@media (min-width: 48rem) {
+  .section-title--aside {
+    padding-left: 14rem;
+  }
+}
+
+/* ----- Page d'accueil ----- */
+.hero {
+  text-align: center;
+  padding-block: var(--space-lg);
+}
+
+.hero-lead {
+  max-width: var(--max-width-text);
+  margin: var(--space-md) auto 0;
+  font-size: var(--text-lg);
+  line-height: 1.8;
+}
+
+.image-container {
+  width: 100%;
+  max-width: 56rem;
+  margin: var(--space-lg) auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.04);
+}
+
+/* ----- Équipe : photo + texte ----- */
+.person {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.person__photo {
+  width: 100%;
+  max-width: 12.5rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.person__info {
+  flex: 1;
+}
+
+@media (min-width: 48rem) {
+  .person {
+    flex-direction: row;
+    gap: var(--space-md);
+  }
+
+  .person__photo {
+    flex: 0 0 auto;
+  }
+}
+
+/* ----- Frise "Moments forts" (défile horizontalement) ----- */
+.timeline {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  text-align: left;
+}
+
+.timeline-item {
+  flex: 0 0 80%;
+  min-width: 17.5rem;
+  padding: var(--space-md);
+  background: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  scroll-snap-align: start;
+}
+
+@media (min-width: 48rem) {
+  .timeline-item {
+    flex-basis: 30%;
+  }
+}
+
+.timeline-year {
+  margin-bottom: var(--space-xs);
+  font-family: var(--font-title);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-terracotta);
+}
+
+.timeline-content h3 {
+  font-size: var(--text-lg);
+}
+
+/* ----- Liste de domaines d'action numérotés ----- */
+.competence-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: 5rem;
+}
+
+.competence-number {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--color-brown);
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.competence-title {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  text-align: left;
+}
+
+/* ----- Textes de projet (pages Actions) ----- */
+.nutrition-content,
+.impact-section,
+.actions-section,
+.bilan-section,
+.project-section,
+.project-intro {
+  margin-bottom: var(--space-lg);
+  text-align: left;
+}
+
+/* Cartes "bilan" : vert = réussite, terracotta = difficulté */
+.bilan-success { background: var(--color-green-soft); }
+.bilan-failure { background: var(--color-terracotta-soft); }
+
+.detail-card { text-align: center; }
+
+.detail-icon {
+  margin-bottom: var(--space-sm);
+  font-size: 2.5rem;
+}
+
+.challenge-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  text-align: left;
+}
+
+.challenge-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-size: 1.75rem;
+  background: var(--color-sand);
+}
+
+.challenge-content p {
+  margin: 0;
+}
+
+/* ----- Galerie photo ----- */
+.gallery-item {
+  height: 12.5rem;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ----- Tableaux ----- */
+.data-table-container {
+  margin: var(--space-md) 0;
+  overflow-x: auto;  /* défile sur petit écran au lieu de déborder */
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-white);
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.data-table--center th,
+.data-table--center td {
+  text-align: center;
+}
+
+.data-table thead th {
+  background: var(--color-brown);
+  color: var(--color-white);
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: var(--color-cream);
+}
+
+/* ----- Graphique en barres (la hauteur vient de style="--value: 41" en %) ----- */
+.data-visualization {
+  margin: var(--space-lg) 0;
+  text-align: center;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  gap: var(--space-xs);
+  width: 100%;
+  max-width: 37.5rem;
+  height: 12.5rem;
+  margin: var(--space-lg) auto;
+  padding: var(--space-xs);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.chart-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  max-width: 5rem;
+  height: 100%;
+}
+
+.chart-bar {
+  width: min(3.75rem, 80%);
+  height: calc(var(--value) * 1%);
+  background: var(--color-green);
+  border-radius: 0.3rem 0.3rem 0 0;
+}
+
+.chart-item p {
+  margin: var(--space-xs) 0 0;
+  font-size: var(--text-sm);
+  color: var(--color-brown);
+}
+
+/* ----- Page Infos pratiques ----- */
+.summary {
+  margin-bottom: var(--space-lg);
+  text-align: left;
+}
+
+.summary h2 {
+  font-size: var(--text-xl);
+}
+
+.summary li {
+  margin-bottom: 0.5rem;
+}
+
+.info-section {
+  margin-bottom: var(--space-xl);
+  text-align: left;
+}
+
+.info-section h2 {
+  padding-bottom: var(--space-xs);
+  border-bottom: 2px solid var(--color-green);
+}
+
+.landscape-item {
+  text-align: center;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.checklist-icon {
+  font-size: 1.5rem;
+}
+
+/* ----- Page Tourisme solidaire ----- */
+.presentation-content {
+  max-width: 50rem;
+  margin-inline: auto;
+  text-align: left;
+}
+
+.presentation-image {
+  margin-top: var(--space-md);
+}
+
+.presentation-image img {
+  width: 100%;
+  max-width: 50rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.info-card,
+.contact-card {
+  text-align: center;
+}
+
+/* Programme jour par jour */
+.treasure-map {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: var(--space-md) 0;
+}
+
+.map-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: var(--space-xs);
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.step-date {
+  margin-bottom: var(--space-xs);
+  font-family: var(--font-title);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-terracotta);
+}
+
+.step-content {
+  max-width: 25rem;
+}
+
+/* ----- Page Contact ----- */
+.contact-cards-container {
+  margin-block: var(--space-lg);
+}
+
+.contact-card-item {
+  text-align: center;
+}
+
+.contact-card-body,
+.contact-person-info {
+  text-align: left;
+}
+
+.contact-person-info {
+  margin-bottom: var(--space-md);
+}
+
+.contact-person-name {
+  margin-bottom: 0.25rem;
+  font-size: var(--text-lg);
+}
+
+.contact-person-role {
+  margin-bottom: 0.25rem;
+  color: var(--color-muted);
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-xs);
+}
+
+.contact-info-item p {
+  margin: 0;
+}
+
+.contact-form-container {
+  max-width: 50rem;
+  margin: var(--space-lg) auto;
+}
+
+.contact-form-title {
+  text-align: center;
+}
+
+/* ----- Formulaires (contact + newsletter) ----- */
+.form-input-group {
+  margin-bottom: var(--space-md);
+  text-align: left;
+}
+
+.form-input-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: var(--color-brown);
+}
+
+.form-input-field,
+.form-textarea-field,
+.newsletter-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-text);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background: var(--color-white);
+}
+
+.form-textarea-field {
+  resize: vertical;
+}
+
+.form-message {
+  margin: var(--space-md) 0;
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+/* ----- Bandeau newsletter (bas de page) ----- */
+.newsletter-section {
+  padding: var(--space-xl) 0;
+  background: var(--color-brown);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.newsletter-container {
+  width: min(100% - 2 * var(--gutter), var(--max-width));
+  margin-inline: auto;
+}
+
+.newsletter-title {
+  color: var(--color-white);
+}
+
+.newsletter-subtitle {
+  margin-bottom: var(--space-md);
+  font-size: var(--text-lg);
+  opacity: 0.9;
+}
+
+.newsletter-form {
+  max-width: 32rem;
+  margin-inline: auto;
+}
+
+.newsletter-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.newsletter-button {
+  min-height: 2.75rem;
+  padding: 0.625rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-text);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-brown);
+  background: var(--color-cream);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.newsletter-button:hover {
+  background: var(--color-sand);
+}
+
+@media (min-width: 48rem) {
+  .newsletter-form-group {
+    flex-direction: row;
+  }
+
+  .newsletter-input {
+    flex: 1;
+    border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  }
+
+  .newsletter-button {
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+}
+
+/* Message affiché après l'envoi (caché tant qu'il n'y a rien à dire) */
+.newsletter-message {
+  display: none;
+  max-width: 32rem;
+  margin: var(--space-sm) auto;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  color: var(--color-brown);
+}
+
+.newsletter-message.success {
+  display: block;
+  background: var(--color-green-soft);
+  color: var(--color-green-dark);
+}
+
+.newsletter-message.error {
+  display: block;
+  background: var(--color-white);
+  color: var(--color-error);
+}

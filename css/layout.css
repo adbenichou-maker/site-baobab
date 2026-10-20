@@ -1,0 +1,357 @@
+/* ==========================================================================
+   LAYOUT — structure des pages : conteneurs, sections, grilles, menu.
+   ========================================================================== */
+
+/* ----- Conteneurs : centrent le contenu et laissent une marge sur les côtés ----- */
+.container {
+  width: min(100% - 2 * var(--gutter), var(--max-width));
+  margin-inline: auto;
+}
+
+/* Un conteneur dans un autre prend toute la largeur du premier, avec de l'air entre eux */
+.container .container {
+  width: 100%;
+}
+
+.container > .container {
+  margin-top: var(--space-xl);
+}
+
+/* Conteneur plus étroit, pour les textes (centré par défaut) */
+.section-content {
+  width: min(100% - 2 * var(--gutter), var(--max-width-text));
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* ----- Sections : bandes pleine largeur empilées sur la page ----- */
+.section {
+  padding-block: var(--section-padding);
+}
+
+.section--intro {
+  padding-bottom: var(--space-md);
+}
+
+/* Après l'introduction, la section de même couleur n'a pas besoin de marge en haut */
+.section--intro + .section--light {
+  padding-top: 0;
+}
+
+.section--light {
+  background: var(--color-cream);
+}
+
+.section--alt {
+  background: var(--color-sand);
+}
+
+/* ----- Grilles : les cartes se placent automatiquement selon la largeur ----- */
+.grid {
+  --grid-min: 16rem;  /* largeur minimale d'une carte */
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min)), 1fr));
+}
+
+/* Ce qui suit une grille de cartes garde de l'air au-dessus */
+.grid + * {
+  margin-top: var(--space-lg);
+}
+
+.grid--small { --grid-min: 11rem; }
+.grid--wide { --grid-min: 20rem; }
+
+/* Toujours 1 colonne sur téléphone, 2 colonnes dès la tablette */
+.grid--2 { grid-template-columns: 1fr; }
+
+@media (min-width: 48rem) {
+  .grid--2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ==========================================================================
+   MENU DE NAVIGATION
+   Téléphone / tablette : menu qui glisse depuis la droite (bouton ☰).
+   Ordinateur (à partir de 981 px) : barre horizontale.
+   Le JavaScript (js/navbar.js) ajoute les classes .show, .open, .drawer-open.
+   (Ce bloc sera simplifié à l'étape 4.)
+   ========================================================================== */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 130;  /* au-dessus du fond sombre du tiroir (110) */
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-container {
+  width: min(100% - 2 * var(--gutter), var(--max-width));
+  margin-inline: auto;
+  padding-block: var(--space-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Le logo garde ses proportions (largeur automatique) */
+.brand .logo {
+  height: 3.5rem;
+  width: auto;
+}
+
+/* Bouton ☰ (visible sur téléphone et tablette) */
+.nav-toggle {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: var(--color-brown);
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+/* ----- Liste des liens (tiroir sur téléphone) ----- */
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(85vw, 22rem);
+  padding: var(--space-md) var(--space-sm) 9rem;
+  overflow-y: auto;
+  background: var(--color-white);
+  box-shadow: -1.125rem 0 2.5rem rgba(0, 0, 0, 0.12);
+  transform: translateX(100%);
+  visibility: hidden;  /* fermé : on ne peut pas y accéder au clavier */
+  transition: transform 0.28s ease, visibility 0s 0.28s;
+  z-index: 120;
+}
+
+.nav-menu.show {
+  transform: translateX(0);
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.nav-menu li {
+  position: relative;
+  margin: 0;
+}
+
+.nav-menu a,
+.dropbtn {
+  color: var(--color-brown);
+  text-decoration: none;
+  font-family: var(--font-text);
+  font-weight: 600;
+  font-size: var(--text-lg);
+}
+
+.nav-menu a:hover,
+.dropbtn:hover {
+  color: var(--color-terracotta);
+}
+
+.dropbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Petite flèche ▾ à droite du bouton */
+.dropbtn::after {
+  content: "▾";
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  transition: transform 0.12s ease;
+}
+
+.nav-item.open > .dropbtn::after {
+  transform: rotate(180deg);
+}
+
+/* Sous-menu : replié, s'ouvre au clic */
+.dropdown-menu {
+  display: none;
+  padding-left: var(--space-sm);
+}
+
+.nav-item.open > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 0.625rem 0.5rem;
+  font-size: var(--text-base);
+}
+
+/* En-tête du tiroir (créé par le JavaScript) */
+.nav-drawer-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.375rem 0;
+}
+
+.nav-drawer-header .menu-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-drawer-header .menu-title {
+  font-family: var(--font-title);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-brown);
+}
+
+.drawer-sep {
+  height: 1px;
+  background: var(--color-border);
+  margin: 0.5rem 0;
+}
+
+/* Boutons "Faire un don" / "Nous contacter" : cachés, sauf en bas du tiroir ouvert */
+.nav-ctas {
+  display: none;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.nav-menu.show ~ .nav-ctas {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  bottom: 1.5rem;
+  width: min(85vw, 22rem);
+  padding: 0 var(--space-sm);
+  z-index: 121;
+}
+
+.nav-menu.show ~ .nav-ctas .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Fond sombre derrière le tiroir (créé par le JavaScript) */
+body.drawer-open {
+  overflow: hidden;
+}
+
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 110;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+
+.drawer-overlay.show {
+  opacity: 1;
+}
+
+/* ----- Ordinateur : barre horizontale ----- */
+@media (min-width: 981px) {
+  .brand .logo {
+    height: 4.5rem;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    gap: var(--space-md);
+    height: auto;
+    width: auto;
+    padding: 0;
+    overflow: visible;
+    background: transparent;
+    box-shadow: none;
+    transform: none;
+    visibility: visible;
+  }
+
+  .dropbtn {
+    width: auto;
+    padding: 0.5rem 0.25rem;
+    font-size: var(--text-base);
+    white-space: nowrap;
+  }
+
+  .dropbtn::after {
+    margin-left: 0.4rem;
+  }
+
+  /* Sous-menu en carte flottante, ouvert au survol ou au clavier */
+  .dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 13rem;
+    padding: 0.375rem 0;
+    background: var(--color-white);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(0.5rem);
+    pointer-events: none;
+    transition: opacity 0.12s ease, transform 0.12s ease;
+    z-index: 60;
+  }
+
+  .nav-item:hover > .dropdown-menu,
+  .nav-item:focus-within > .dropdown-menu,
+  .nav-item.open > .dropdown-menu {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .nav-item:hover > .dropbtn::after {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu a {
+    padding: 0.625rem 1rem;
+  }
+
+  .dropdown-menu a:hover {
+    background: var(--color-cream);
+  }
+
+  .nav-ctas {
+    display: flex;
+  }
+}
