@@ -52,7 +52,7 @@
   box-shadow: none;
 }
 
-.info-content .card--inset {
+.info-content > .card--inset {
   margin-bottom: var(--space-sm);
 }
 
@@ -379,8 +379,11 @@
   gap: var(--space-xs);
 }
 
-.checklist-icon {
-  font-size: 1.5rem;
+.checklist-icon .icon,
+.step-icon .icon,
+.challenge-icon .icon {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 /* ----- Page Tourisme solidaire ----- */
