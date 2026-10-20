@@ -13,6 +13,8 @@
 }
 
 *{box-sizing:border-box}
+/* Les images ne dépassent jamais de leur conteneur et gardent leurs proportions */
+img{max-width:100%;height:auto}
 body{
   font-family: 'Merriweather', Georgia, serif;
   margin:0;
