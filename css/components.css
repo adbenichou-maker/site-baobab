@@ -76,14 +76,6 @@
   margin-bottom: var(--space-lg);
 }
 
-/* Titre centré sur la colonne de texte, à côté des photos (page Équipe) :
-   on réserve à gauche la largeur d'une photo (12,5rem) + l'espace (1,5rem) */
-@media (min-width: 48rem) {
-  .section-title--aside {
-    padding-left: 14rem;
-  }
-}
-
 /* ----- Page d'accueil ----- */
 .hero {
   text-align: center;
@@ -131,18 +123,24 @@
   transform: scale(1.04);
 }
 
-/* ----- Équipe : photo + texte ----- */
+/* ----- Équipe : carte avec photo + texte ----- */
 .person {
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-md);
 }
 
+.person:last-child {
+  margin-bottom: 0;
+}
+
+/* Sur téléphone, la photo est centrée au-dessus du texte */
 .person__photo {
   width: 100%;
   max-width: 12.5rem;
   aspect-ratio: 1;
+  margin-inline: auto;
   object-fit: cover;
   border-radius: var(--radius);
 }
@@ -154,11 +152,13 @@
 @media (min-width: 48rem) {
   .person {
     flex-direction: row;
+    align-items: center;
     gap: var(--space-md);
   }
 
   .person__photo {
     flex: 0 0 auto;
+    margin-inline: 0;
   }
 }
 
@@ -169,6 +169,8 @@
   padding: var(--space-md) 0;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-brown) var(--color-sand);
   text-align: left;
 }
 
