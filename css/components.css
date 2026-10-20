@@ -279,7 +279,7 @@
 
 /* ----- Galerie photo ----- */
 .gallery-item {
-  height: 12.5rem;
+  height: 15rem;
   overflow: hidden;
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
@@ -316,6 +316,11 @@
   text-align: center;
 }
 
+/* La première colonne (les intitulés) reste alignée à gauche */
+.data-table--center td:first-child {
+  text-align: left;
+}
+
 .data-table thead th {
   background: var(--color-brown);
   color: var(--color-white);
@@ -350,7 +355,7 @@
   justify-content: flex-end;
   align-items: center;
   flex: 1;
-  max-width: 5rem;
+  max-width: 7rem;
   height: 100%;
 }
 

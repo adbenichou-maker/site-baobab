@@ -60,6 +60,7 @@
 }
 
 .grid--small { --grid-min: 11rem; }
+.grid--narrow { --grid-min: 12.5rem; }
 .grid--wide { --grid-min: 20rem; }
 
 /* Toujours 1 colonne sur téléphone, 2 colonnes dès la tablette */
