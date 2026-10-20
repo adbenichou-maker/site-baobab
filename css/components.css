@@ -45,6 +45,11 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* Titre h2 d'une carte posée directement dans une grille */
+.grid > .card > h2 {
+  font-size: var(--text-xl);
+}
+
 /* Carte posée à l'intérieur d'une autre carte */
 .card--inset {
   background: var(--color-cream);
@@ -67,11 +72,6 @@
   margin-top: 0;
 }
 
-/* Sous-titre collé à son titre (accueil) : annule l'espace habituel avant un h2 */
-.hero-title + .hero-title {
-  margin-top: 0;
-}
-
 .section-title {
   margin-bottom: var(--space-lg);
 }
@@ -90,11 +90,26 @@
   padding-block: var(--space-lg);
 }
 
+.hero-subtitle {
+  margin-bottom: var(--space-md);
+  font-family: var(--font-title);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-brown);
+}
+
 .hero-lead {
   max-width: var(--max-width-text);
-  margin: var(--space-md) auto 0;
+  margin: 0 auto;
   font-size: var(--text-lg);
   line-height: 1.8;
+}
+
+/* Rubrique dont le contenu n'est pas encore écrit */
+.placeholder-note {
+  margin: var(--space-sm) 0 0;
+  font-style: italic;
+  color: var(--color-muted);
 }
 
 .image-container {
