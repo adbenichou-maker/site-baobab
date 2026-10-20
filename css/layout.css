@@ -70,17 +70,34 @@
 }
 
 /* ==========================================================================
-   MENU DE NAVIGATION
-   Téléphone / tablette : menu qui glisse depuis la droite (bouton ☰).
-   Ordinateur (à partir de 981 px) : barre horizontale.
-   Le JavaScript (js/navbar.js) ajoute les classes .show, .open, .drawer-open.
-   (Ce bloc sera simplifié à l'étape 4.)
+   EN-TÊTE ET MENU DE NAVIGATION
+   Téléphone / tablette : menu "tiroir" qui glisse depuis la droite (bouton ☰).
+   Ordinateur (à partir de 64rem = 1024 px) : barre horizontale.
+   Le JavaScript (js/navigation.js) ajoute seulement la classe .open.
    ========================================================================== */
 
-.site-nav {
+/* Lien caché qui apparaît au clavier pour aller directement au contenu */
+.skip-link {
+  position: absolute;
+  top: -4rem;
+  left: var(--space-sm);
+  z-index: 200;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-brown);
+  color: var(--color-white);
+}
+
+.skip-link:focus {
+  top: var(--space-xs);
+  color: var(--color-white);
+}
+
+/* Bandeau blanc qui reste en haut de l'écran quand on défile */
+.site-header {
   position: sticky;
   top: 0;
-  z-index: 130;  /* au-dessus du fond sombre du tiroir (110) */
+  z-index: 100;
   background: var(--color-white);
   border-bottom: 1px solid var(--color-border);
 }
@@ -96,18 +113,17 @@
 
 .brand {
   display: inline-flex;
-  align-items: center;
 }
 
 /* Le logo garde ses proportions (largeur automatique) */
 .brand .logo {
-  height: 3.5rem;
+  height: 3rem;
   width: auto;
 }
 
-/* Bouton ☰ (visible sur téléphone et tablette) */
-.nav-toggle {
-  margin-left: auto;
+/* Bouton ☰ et bouton ✕ */
+.nav-toggle,
+.nav-close {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -117,40 +133,52 @@
   background: transparent;
   border: none;
   color: var(--color-brown);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
-/* ----- Liste des liens (tiroir sur téléphone) ----- */
-.nav-menu {
-  list-style: none;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+.nav-toggle {
+  margin-left: auto;
+}
+
+.nav-close {
+  align-self: flex-end;
+}
+
+/* ----- Tiroir (téléphone / tablette) ----- */
+.nav-panel {
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
+  bottom: 0;
+  z-index: 110;
+  display: flex;
+  flex-direction: column;
   width: min(85vw, 22rem);
-  padding: var(--space-md) var(--space-sm) 9rem;
+  padding: var(--space-sm);
   overflow-y: auto;
   background: var(--color-white);
-  box-shadow: -1.125rem 0 2.5rem rgba(0, 0, 0, 0.12);
   transform: translateX(100%);
-  visibility: hidden;  /* fermé : on ne peut pas y accéder au clavier */
-  transition: transform 0.28s ease, visibility 0s 0.28s;
-  z-index: 120;
+  visibility: hidden;  /* fermé : inaccessible au clavier */
+  transition: transform 0.25s ease, visibility 0s 0.25s;
 }
 
-.nav-menu.show {
-  transform: translateX(0);
+.nav-panel.open {
+  transform: none;
   visibility: visible;
   transition-delay: 0s;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.45);  /* assombrit le reste de la page */
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+.nav-menu {
+  margin-bottom: var(--space-md);
 }
 
 .nav-menu li {
-  position: relative;
   margin: 0;
 }
 
@@ -159,8 +187,8 @@
   color: var(--color-brown);
   text-decoration: none;
   font-family: var(--font-text);
-  font-weight: 600;
   font-size: var(--text-lg);
+  font-weight: 600;
 }
 
 .nav-menu a:hover,
@@ -208,97 +236,46 @@
   font-size: var(--text-base);
 }
 
-/* En-tête du tiroir (créé par le JavaScript) */
-.nav-drawer-header {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: 0.375rem 0;
-}
-
-.nav-drawer-header .menu-left {
-  display: flex;
-  align-items: center;
-}
-
-.nav-drawer-header .menu-title {
-  font-family: var(--font-title);
-  font-size: var(--text-xl);
-  font-weight: 700;
-  color: var(--color-brown);
-}
-
-.drawer-sep {
-  height: 1px;
-  background: var(--color-border);
-  margin: 0.5rem 0;
-}
-
-/* Boutons "Faire un don" / "Nous contacter" : cachés, sauf en bas du tiroir ouvert */
+/* Boutons "Faire un don" / "Nous contacter" : en bas du tiroir */
 .nav-ctas {
-  display: none;
-  gap: 0.75rem;
-  align-items: center;
-}
-
-.nav-menu.show ~ .nav-ctas {
   display: flex;
   flex-direction: column;
-  position: fixed;
-  right: 0;
-  bottom: 1.5rem;
-  width: min(85vw, 22rem);
-  padding: 0 var(--space-sm);
-  z-index: 121;
-}
-
-.nav-menu.show ~ .nav-ctas .btn {
-  width: 100%;
-  justify-content: center;
-}
-
-/* Fond sombre derrière le tiroir (créé par le JavaScript) */
-body.drawer-open {
-  overflow: hidden;
-}
-
-.drawer-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 110;
-  opacity: 0;
-  transition: opacity 0.18s ease;
-}
-
-.drawer-overlay.show {
-  opacity: 1;
+  gap: 0.75rem;
+  margin-top: auto;
 }
 
 /* ----- Ordinateur : barre horizontale ----- */
-@media (min-width: 981px) {
+@media (min-width: 64rem) {
   .brand .logo {
-    height: 4.5rem;
+    height: 4rem;
   }
 
-  .nav-toggle {
+  .nav-toggle,
+  .nav-close {
     display: none;
   }
 
-  .nav-menu {
+  .nav-panel {
     position: static;
+    flex: 1;
     flex-direction: row;
     align-items: center;
-    flex: 1;
-    gap: var(--space-md);
-    height: auto;
     width: auto;
     padding: 0;
     overflow: visible;
     background: transparent;
-    box-shadow: none;
     transform: none;
     visibility: visible;
+  }
+
+  .nav-menu {
+    display: flex;
+    gap: var(--space-md);
+    margin: 0;
+  }
+
+  .nav-menu li {
+    position: relative;
   }
 
   .dropbtn {
@@ -312,7 +289,7 @@ body.drawer-open {
     margin-left: 0.4rem;
   }
 
-  /* Sous-menu en carte flottante, ouvert au survol ou au clavier */
+  /* Sous-menu : carte flottante, ouverte au survol, au clavier ou au clic */
   .dropdown-menu {
     display: block;
     position: absolute;
@@ -328,7 +305,6 @@ body.drawer-open {
     transform: translateY(0.5rem);
     pointer-events: none;
     transition: opacity 0.12s ease, transform 0.12s ease;
-    z-index: 60;
   }
 
   .nav-item:hover > .dropdown-menu,
@@ -352,6 +328,7 @@ body.drawer-open {
   }
 
   .nav-ctas {
-    display: flex;
+    flex-direction: row;
+    margin: 0 0 0 auto;
   }
 }
