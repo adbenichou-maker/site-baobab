@@ -61,6 +61,11 @@
   margin-bottom: var(--space-sm);
 }
 
+/* Rangée de boutons en fin de section */
+.section-actions {
+  margin-top: var(--space-lg);
+}
+
 /* ----- Titres de sections ----- */
 .hero-title {
   font-size: var(--text-3xl);
@@ -398,6 +403,16 @@
 
 .landscape-item {
   text-align: center;
+}
+
+/* Listes à puces vertes dans les cartes d'information */
+.info-content ul {
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.info-content li::marker {
+  color: var(--color-green);
 }
 
 .checklist-item {
