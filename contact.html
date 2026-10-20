@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contactez Graine de Baobab | ONG Bénin – Don & Bénévolat</title>
   <meta name="description" content="Contactez l'association Graine de Baobab. Faites un don, devenez bénévole ou partenaire de notre ONG humanitaire active au nord du Bénin depuis 2011.">
+  <link rel="icon" href="images/logo-baobab.png">
+
+  <!-- Polices (Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600;700&display=swap">
+
+  <!-- Styles : les couleurs et polices se règlent dans css/variables.css -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -74,6 +79,7 @@
   </header>
 
   <main id="contenu">
+    <!-- Nous contacter -->
     <section class="section section--light section--intro">
       <div class="section-content">
         <h1 class="hero-title">Nous contacter
@@ -82,16 +88,16 @@
           Vous avez des questions, souhaitez en savoir plus sur nos actions ou discuter d'une collaboration ?
         </p>
         <p>
-          N'hésitez pas à nous contacter via le formulaire plus bas ou par email à <a href="mailto:grainedebaobab.ong@gmail.com" class="contact-email-link">grainedebaobab.ong@gmail.com</a>.
+          N'hésitez pas à nous contacter via le formulaire plus bas ou par email à <a href="mailto:grainedebaobab.ong@gmail.com">grainedebaobab.ong@gmail.com</a>.
         </p>
       </div>
     </section>
 
       <div class="grid grid--2 container contact-cards-container">
         <div class="card contact-card-item">
-          <div class="contact-card-header">
+          <div>
             <span class="icon icon-map-pin icon--lg" aria-hidden="true"></span>
-            <h2 class="contact-location-title">En France</h2>
+            <h2>En France</h2>
           </div>
           <div class="contact-card-body">
             <div class="contact-person-info">
@@ -100,7 +106,7 @@
               </p>
               <div class="contact-info-item">
                 <span class="icon icon-mail" aria-hidden="true"></span>
-                <p><a href="mailto:jarrige.antoine@gmail.com" class="contact-email-link">jarrige.antoine@gmail.com</a></p>
+                <p><a href="mailto:jarrige.antoine@gmail.com">jarrige.antoine@gmail.com</a></p>
               </div>
             </div>
             <div class="contact-person-info">
@@ -108,28 +114,28 @@
               <p class="contact-person-role">Trésorier</p>
               <div class="contact-info-item">
                 <span class="icon icon-mail" aria-hidden="true"></span>
-                <p><a href="mailto:asmaalaurent@gmail.com" class="contact-email-link">asmaalaurent@gmail.com</a></p>
+                <p><a href="mailto:asmaalaurent@gmail.com">asmaalaurent@gmail.com</a></p>
               </div>
             </div>
           </div>
         </div>
 
         <div class="card contact-card-item">
-          <div class="contact-card-header">
+          <div>
             <span class="icon icon-globe icon--lg" aria-hidden="true"></span>
-            <h2 class="contact-location-title">Au Bénin</h2>
+            <h2>Au Bénin</h2>
           </div>
           <div class="contact-card-body">
             <div class="contact-person-info">
               <h3 class="contact-person-name">Salami Adam (surnommé "Sam")</h3>
               <p class="contact-person-role">Co-fondateur et Directeur de projet au Bénin</p>
-              <div class="contact-info-item" style="margin-bottom: 0;">
+              <div class="contact-info-item">
                 <span class="icon icon-mail" aria-hidden="true"></span>
-                <p><a href="mailto:salami_adam@yahoo.fr" class="contact-email-link">salami_adam@yahoo.fr</a></p>
+                <p><a href="mailto:salami_adam@yahoo.fr">salami_adam@yahoo.fr</a></p>
               </div>
               <div class="contact-info-item">
                 <span class="icon icon-mail" aria-hidden="true"></span>
-                <p><a href="mailto:adamsalami99@gmail.com" class="contact-email-link">adamsalami99@gmail.com</a></p>
+                <p><a href="mailto:adamsalami99@gmail.com">adamsalami99@gmail.com</a></p>
               </div>
             </div>
           </div>
@@ -139,7 +145,7 @@
       <div class="container">
         <div class="card contact-form-container">
           <h2 class="contact-form-title">Envoyez-nous un message</h2>
-          <form class="contact-form" data-success="Merci pour votre message ! Nous vous répondrons bientôt." action="https://formsubmit.co/asmaalaurent@gmail.com" method="POST">
+          <form data-success="Merci pour votre message ! Nous vous répondrons bientôt." action="https://formsubmit.co/asmaalaurent@gmail.com" method="POST">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_subject" value="Nouvelle prise de contact depuis le site Graine de Baobab">
             <input type="hidden" name="_autoresponse" value="Merci pour votre message! Nous vous répondrons très bientôt.">
@@ -164,10 +170,10 @@
           </form>
         </div>
 
-
       </div>
   </main>
 
+  <!-- Scripts : formulaires (newsletter, contact) puis menu -->
   <script src="js/formulaires.js"></script>
   <script src="js/navigation.js"></script>
 </body>

@@ -59,7 +59,6 @@
   margin-top: var(--space-lg);
 }
 
-.grid--small { --grid-min: 11rem; }
 .grid--narrow { --grid-min: 12.5rem; }
 .grid--medium { --grid-min: 14rem; }
 .grid--wide { --grid-min: 20rem; }

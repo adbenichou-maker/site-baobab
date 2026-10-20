@@ -2,17 +2,22 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Notre histoire depuis 2011 | Graine de Baobab – ONG Bénin</title>
   <meta name="description" content="L'histoire de Graine de Baobab depuis sa fondation en 2011. Une association née de la solidarité internationale, engagée pour l'éducation et la nutrition au nord du Bénin.">
+  <link rel="icon" href="images/logo-baobab.png">
+
+  <!-- Polices (Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600;700&display=swap">
+
+  <!-- Styles : les couleurs et polices se règlent dans css/variables.css -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/icons.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -73,6 +78,7 @@
   </header>
 
   <main id="contenu">
+    <!-- Notre histoire -->
     <section class="section section--light section--intro">
       <div class="section-content">
         <h1 class="hero-title">Notre histoire</h1>
@@ -81,7 +87,7 @@
         </p>
       </div>
     </section>
-    <div class="timeline-container container text-center">
+    <div class="container text-center">
         <h2>Moments Forts</h2>
         <div class="timeline" tabindex="0" role="region" aria-label="Frise chronologique : faites défiler horizontalement">
             <div class="timeline-item">
@@ -144,9 +150,10 @@
     </div>
   </main>
 
+  <!-- Bandeau newsletter (bas de page) -->
   <section class="newsletter-section">
     <div class="newsletter-container">
-      <div class="newsletter-content">
+      <div>
         <h2 class="newsletter-title">Restez informé</h2>
         <p class="newsletter-subtitle">Recevez nos actualités et événements directement dans votre boîte mail</p>
 
@@ -166,7 +173,7 @@
     </div>
   </section>
 
-
+  <!-- Scripts : formulaires (newsletter, contact) puis menu -->
   <script src="js/formulaires.js"></script>
   <script src="js/navigation.js"></script>
 

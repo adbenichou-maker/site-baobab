@@ -97,7 +97,6 @@ img {
 
 /* ----- Petits utilitaires d'alignement ----- */
 .text-center { text-align: center; }
-.text-left { text-align: left; }
 
 /* ----- Respect des personnes qui réduisent les animations ----- */
 @media (prefers-reduced-motion: reduce) {

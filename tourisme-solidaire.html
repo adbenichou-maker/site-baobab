@@ -2,12 +2,17 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tourisme solidaire au Bénin | Voyager & Agir – Graine de Baobab</title>
   <meta name="description" content="Partez en tourisme solidaire au Bénin avec Graine de Baobab. Rencontrez les communautés locales, participez aux projets humanitaires et découvrez le nord du Bénin.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" href="images/logo-baobab.png">
+
+  <!-- Polices (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600;700&display=swap">
+
+  <!-- Styles : les couleurs et polices se règlent dans css/variables.css -->
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -72,14 +77,17 @@
     </nav>
   </header>
   <main id="contenu">
+    <!-- Tourisme Solidaire -->
     <section class="section section--light section--intro">
       <div class="section-content">
         <h1 class="hero-title">Tourisme Solidaire
         </h1>
       </div>
     </section>
+    <!-- Sommaire -->
     <section class="section section--light">
       <section class="container">
+        <!-- Sommaire -->
         <section class="card summary text-center">
           <h2>Sommaire</h2>
           <ul>
@@ -90,6 +98,7 @@
           </ul>
         </section>
 
+        <!-- Présentation du Séjour -->
         <section id="presentation" class="container text-center">
           <h2>Présentation du Séjour</h2>
           <div class="presentation-content">
@@ -105,6 +114,7 @@
           </div>
         </section>
 
+        <!-- Informations Pratiques -->
         <section id="infos-pratiques" class="container text-center">
           <h2>Informations Pratiques</h2>
           <div class="grid grid--medium">
@@ -151,6 +161,7 @@
           </div>
         </section>
 
+        <!-- Encadrement et Contacts -->
         <section id="encadrement" class="container text-center">
           <h2>Encadrement et Contacts</h2>
           <div class="grid grid--wide">
@@ -169,6 +180,7 @@
           </div>
         </section>
 
+        <!-- Programme Type – 13 Jours de Découverte -->
         <section id="programme" class="container text-center">
           <h2>Programme Type – 13 Jours de Découverte</h2>
           <div class="treasure-map">
@@ -278,9 +290,10 @@
       </section>
     </section>
   </main>
+  <!-- Bandeau newsletter (bas de page) -->
   <section class="newsletter-section">
     <div class="newsletter-container">
-      <div class="newsletter-content">
+      <div>
         <h2 class="newsletter-title">Restez informé</h2>
         <p class="newsletter-subtitle">Recevez nos actualités et événements directement dans votre boîte mail</p>
 
@@ -300,7 +313,7 @@
     </div>
   </section>
 
-
+  <!-- Scripts : formulaires (newsletter, contact) puis menu -->
   <script src="js/formulaires.js"></script>
   <script src="js/navigation.js"></script>
 </body>
