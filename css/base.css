@@ -82,6 +82,19 @@ img {
   scroll-margin-top: 6rem;
 }
 
+/* ----- Texte caché à l'écran mais lu par les lecteurs d'écran (étiquettes) ----- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ----- Petits utilitaires d'alignement ----- */
 .text-center { text-align: center; }
 .text-left { text-align: left; }

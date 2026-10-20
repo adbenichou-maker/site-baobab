@@ -62,6 +62,11 @@
   margin-bottom: var(--space-md);
 }
 
+/* Un titre juste sous une icône reste collé à elle (cartes de contact) */
+.icon + h2 {
+  margin-top: 0;
+}
+
 /* Sous-titre collé à son titre (accueil) : annule l'espace habituel avant un h2 */
 .hero-title + .hero-title {
   margin-top: 0;
@@ -526,13 +531,6 @@
   resize: vertical;
 }
 
-.form-message {
-  margin: var(--space-md) 0;
-  padding: var(--space-sm);
-  border-radius: var(--radius-sm);
-  text-align: center;
-}
-
 /* ----- Bandeau newsletter (bas de page) ----- */
 .newsletter-section {
   padding: var(--space-xl) 0;
@@ -600,25 +598,30 @@
   }
 }
 
-/* Message affiché après l'envoi (caché tant qu'il n'y a rien à dire) */
-.newsletter-message {
-  display: none;
-  max-width: 32rem;
-  margin: var(--space-sm) auto;
+/* ----- Message d'état d'un formulaire (envoi, réussite, erreur) -----
+   Géré par js/formulaires.js. Invisible tant qu'il est vide. */
+.form-status {
+  margin: var(--space-sm) auto 0;
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius-sm);
-  background: var(--color-white);
+  text-align: center;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status.is-loading {
+  background: var(--color-sand);
   color: var(--color-brown);
 }
 
-.newsletter-message.success {
-  display: block;
+.form-status.is-success {
   background: var(--color-green-soft);
   color: var(--color-green-dark);
 }
 
-.newsletter-message.error {
-  display: block;
-  background: var(--color-white);
+.form-status.is-error {
+  background: var(--color-terracotta-soft);
   color: var(--color-error);
 }
