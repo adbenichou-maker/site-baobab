@@ -5,28 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Infos pratiques Bénin | Tourisme solidaire – Graine de Baobab</title>
   <meta name="description" content="Préparez votre voyage au Bénin et participez aux actions de Graine de Baobab. Informations pratiques, hébergement, transport et conseils pour le tourisme solidaire.">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo-baobab.png">
+
+  <!-- Polices (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600;700&display=swap">
+
+  <!-- Styles : les couleurs et polices se règlent dans css/variables.css -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/icons.css">
 </head>
 <body>
-  <nav class="site-nav" aria-label="Navigation principale">
-    <div class="nav-container">
-      <a class="brand" href="index.html"><img src="images/logo-baobab.png" alt="Graine de Baobab" class="logo"></a>
-      <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item dropdown"><button class="dropbtn">Nous connaître</button><ul class="dropdown-menu"><li><a href="notre-equipe.html">Notre équipe</a></li><li><a href="notre-histoire.html">Notre histoire</a></li></ul></li>
-        <li class="nav-item dropdown"><button class="dropbtn">Nos actions</button><ul class="dropdown-menu"><li><a href="insecurite-alimentaire.html">Insécurité alimentaire</a></li><li><a href="insertion-professionnelle.html">Insertion professionnelle</a></li><li><a href="numerique-pour-tous.html">Numérique pour tous</a></li></ul></li>
-        <li class="nav-item dropdown"><button class="dropbtn">Le Bénin</button><ul class="dropdown-menu"><li><a href="infos-pratiques.html">Infos pratiques</a></li><li><a href="tourisme-solidaire.html">Tourisme solidaire</a></li></ul></li>
-        <li class="nav-item dropdown"><button class="dropbtn">S'engager</button><ul class="dropdown-menu"><li><a href="https://www.helloasso.com/associations/ong-graine-de-baobab#donation" target="_blank" rel="noopener noreferrer">Faire un don</a></li><li><a href="nous-rejoindre.html">Nous rejoindre</a></li></ul></li>
-      </ul>
-      <div class="nav-ctas"><a class="btn btn-success" href="https://www.helloasso.com/associations/ong-graine-de-baobab#donation" target="_blank" rel="noopener noreferrer">Faire un don</a><a class="btn btn-primary" href="contact.html">Nous contacter</a></div>
-      <button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
-    </div>
-  </nav>
-  <main>
-    <section class="section section--light" style="padding-top: 0;">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- ===== En-tête et menu (identique sur toutes les pages) ===== -->
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Navigation principale">
+      <div class="nav-container">
+        <a class="brand" href="index.html">
+          <img src="images/logo-baobab.png" alt="Graine de Baobab, retour à l'accueil" class="logo" width="328" height="280">
+        </a>
+
+        <!-- Bouton ☰ (visible sur téléphone et tablette) -->
+        <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-controls="nav-menu" aria-expanded="false">☰</button>
+
+        <div class="nav-panel" id="nav-menu">
+          <button type="button" class="nav-close" aria-label="Fermer le menu">✕</button>
+
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <button type="button" class="dropbtn" aria-expanded="false">Nous connaître</button>
+              <ul class="dropdown-menu">
+                <li><a href="notre-equipe.html">Notre équipe</a></li>
+                <li><a href="notre-histoire.html">Notre histoire</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="dropbtn" aria-expanded="false">Nos actions</button>
+              <ul class="dropdown-menu">
+                <li><a href="insecurite-alimentaire.html">Insécurité alimentaire</a></li>
+                <li><a href="insertion-professionnelle.html">Insertion professionnelle</a></li>
+                <li><a href="numerique-pour-tous.html">Numérique pour tous</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="dropbtn" aria-expanded="false">Le Bénin</button>
+              <ul class="dropdown-menu">
+                <li><a href="infos-pratiques.html">Infos pratiques</a></li>
+                <li><a href="tourisme-solidaire.html">Tourisme solidaire</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="dropbtn" aria-expanded="false">S'engager</button>
+              <ul class="dropdown-menu">
+                <li><a href="https://www.helloasso.com/associations/ong-graine-de-baobab#donation" target="_blank" rel="noopener noreferrer">Faire un don</a></li>
+                <li><a href="nous-rejoindre.html">Nous rejoindre</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="nav-ctas">
+            <a class="btn btn-secondary" href="https://www.helloasso.com/associations/ong-graine-de-baobab#donation" target="_blank" rel="noopener noreferrer">Faire un don</a>
+            <a class="btn btn-primary" href="contact.html">Nous contacter</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="contenu">
+    <!-- Infos pratiques -->
+    <section class="section section--light section--intro">
       <div class="section-content">
-        <h1 class="hero-title" style="font-family: 'Playfair Display', Georgia, serif; color: #5e3023; font-weight: 900; font-size: 3.5rem; letter-spacing: 0.125rem; margin: 0 0 0rem;">Infos pratiques
+        <h1 class="hero-title">Infos pratiques
         </h1>
-        <br>
         <p>
           Quelques informations pratiques pour vous aider à préparer votre voyage au Bénin en toute sérénité avec Graine de Baobab.
         </p>
@@ -35,7 +90,7 @@
         </p>
         <br>
 
-    <div class="summary">
+    <nav class="card summary" aria-label="Sommaire">
       <h2>Sommaire</h2>
       <ul>
         <li><a href="#presentation">Présentation du Bénin</a></li>
@@ -47,24 +102,25 @@
         <li><a href="#checklist">Check-list avant le départ</a></li>
         <li><a href="#conseils">Nos derniers conseils</a></li>
       </ul>
-    </div>
+    </nav>
 
+    <!-- Présentation du Bénin -->
     <div id="presentation" class="info-section">
       <h2>Présentation du Bénin</h2>
-      <div class="info-content">
+      <div class="card info-content">
         <p>
           Situé en Afrique de l’Ouest, entre le Sahara et le golfe de Guinée, le Bénin est un pays à la richesse culturelle et naturelle exceptionnelle. Anciennement appelé Dahomey, il est reconnu pour sa stabilité politique et son histoire profondément marquée par les anciens royaumes et la traite négrière atlantique, qui ont laissé un patrimoine culturel unique.
         </p>
-        <div class="benin-landscape">
-          <div class="landscape-item">
+        <div class="grid">
+          <div class="card card--inset landscape-item">
             <h3>Savanes et montagnes</h3>
             <p>Paysages semi-arides à l’intérieur des terres.</p>
           </div>
-          <div class="landscape-item">
+          <div class="card card--inset landscape-item">
             <h3>Zones verdoyantes</h3>
             <p>Zones humides à l’approche de l’océan.</p>
           </div>
-          <div class="landscape-item">
+          <div class="card card--inset landscape-item">
             <h3>Plaines côtières</h3>
             <p>Ponctuées de lagunes, lacs et marécages.</p>
           </div>
@@ -75,10 +131,11 @@
       </div>
     </div>
 
+    <!-- Formalités administratives -->
     <div id="formalites" class="info-section">
       <h2>Formalités administratives</h2>
-      <div class="info-content">
-        <div class="formality-card">
+      <div class="card info-content">
+        <div class="card card--inset">
           <h3>Pour les ressortissants européens</h3>
           <ul>
             <li>Passeport valide au moins 3 mois après la date de retour</li>
@@ -88,38 +145,40 @@
             <li>Documents requis : passeport, photo, formulaire et attestation fournie par Graine de Baobab</li>
           </ul>
         </div>
-        <div class="formality-card">
+        <div class="card card--inset">
           <h3>Autres nationalités</h3>
           <p>Nous vous invitons à vous renseigner auprès de l’ambassade ou du consulat compétent dans votre pays.</p>
         </div>
       </div>
     </div>
 
+    <!-- Santé et vaccinations -->
     <div id="sante" class="info-section">
       <h2>Santé et vaccinations</h2>
-      <div class="info-content">
-        <div class="health-card">
+      <div class="card info-content">
+        <div class="card card--inset">
           <h3>Vaccinations</h3>
           <ul>
             <li>Fièvre jaune : obligatoire pour entrer au Bénin</li>
             <li>Vaccinations recommandées : diphtérie, tétanos, poliomyélite, fièvre typhoïde, hépatites A et B</li>
           </ul>
         </div>
-        <div class="health-card">
+        <div class="card card--inset">
           <h3>Paludisme</h3>
           <p>Le Bénin est classé zone à risque (groupe 3). Un traitement antipaludéen préventif est recommandé (consultez votre médecin). Utilisation indispensable de répulsifs tropicaux et de moustiquaires.</p>
         </div>
-        <div class="health-card">
+        <div class="card card--inset">
           <h3>Avant le départ</h3>
           <p>Visite de contrôle chez le médecin et le dentiste fortement conseillée.</p>
         </div>
       </div>
     </div>
 
+    <!-- Repas, hébergement et logistique -->
     <div id="logistique" class="info-section">
       <h2>Repas, hébergement et logistique</h2>
-      <div class="info-content">
-        <div class="logistic-card">
+      <div class="card info-content">
+        <div class="card card--inset">
           <h3>Hébergement</h3>
           <p>Hôtels, auberges ou chez l’habitant, toujours sous moustiquaires.</p>
           <ul>
@@ -127,7 +186,7 @@
             <li>En randonnée : nuits sous moustiquaires tendues ou en chambres ventilées, pas de tentes (températures élevées), matelas confortables fournis</li>
           </ul>
         </div>
-        <div class="logistic-card">
+        <div class="card card--inset">
           <h3>Repas</h3>
           <p>Cuisine locale et parfois européenne.</p>
           <ul>
@@ -136,7 +195,7 @@
             <li>Possibilité de cuisiner ensemble selon les étapes</li>
           </ul>
         </div>
-        <div class="logistic-card">
+        <div class="card card--inset">
           <h3>Transport des bagages</h3>
           <p>En journée : sac à dos léger avec l’essentiel (eau, protection solaire, appareil photo, pique-nique…)</p>
           <p>Le sac principal est récupéré chaque soir et transporté en 4x4 ou par porteurs selon les zones.</p>
@@ -144,12 +203,13 @@
       </div>
     </div>
 
+    <!-- Calculer son budget pour un voyage équitable -->
     <div id="budget" class="info-section">
       <h2>Calculer son budget pour un voyage équitable</h2>
-      <div class="info-content">
+      <div class="card info-content">
         <p>Les principales dépenses à prévoir :</p>
-        <div class="budget-table">
-          <table>
+        <div class="data-table-container">
+          <table class="data-table">
             <thead>
               <tr>
                 <th>Catégorie</th>
@@ -184,18 +244,19 @@
             </tbody>
           </table>
         </div>
-        <p>💡 Ce budget est indicatif et modulable. Nous construisons avec vous un programme sur mesure selon vos envies, la durée du séjour et le niveau d’activités.</p>
+        <p><span class="icon icon-lightbulb" aria-hidden="true"></span> Ce budget est indicatif et modulable. Nous construisons avec vous un programme sur mesure selon vos envies, la durée du séjour et le niveau d’activités.</p>
       </div>
     </div>
 
+    <!-- Se préparer au départ -->
     <div id="preparation" class="info-section">
       <h2>Se préparer au départ</h2>
-      <div class="info-content">
-        <div class="preparation-card">
+      <div class="card info-content">
+        <div class="card card--inset">
           <h3>Préparation physique</h3>
           <p>Une bonne condition physique facilite le voyage : marche recommandée 1 fois par semaine (5 à 10 km) avant le départ.</p>
         </div>
-        <div class="preparation-card">
+        <div class="card card--inset">
           <h3>Pharmacie personnelle</h3>
           <p>À valider avec votre médecin. Elle peut contenir :</p>
           <ul>
@@ -211,65 +272,67 @@
       </div>
     </div>
 
+    <!-- Check-list avant le départ -->
     <div id="checklist" class="info-section">
       <h2>Check-list avant le départ</h2>
-      <div class="info-content">
-        <div class="checklist-container">
-          <div class="checklist-item">
-            <div class="checklist-icon">🧴</div>
-            <div class="checklist-text">Trousse de toilette, serviette</div>
+      <div class="card info-content">
+        <div class="grid">
+          <div class="card card--inset checklist-item">
+            <div class="checklist-icon"><span class="icon icon-bottle" aria-hidden="true"></span></div>
+            <div>Trousse de toilette, serviette</div>
           </div>
-          <div class="checklist-item">
-            <div class="checklist-icon">💧</div>
-            <div class="checklist-text">Gourde</div>
+          <div class="card card--inset checklist-item">
+            <div class="checklist-icon"><span class="icon icon-droplet" aria-hidden="true"></span></div>
+            <div>Gourde</div>
           </div>
-          <div class="checklist-item">
-            <div class="checklist-icon">🧻</div>
-            <div class="checklist-text">Lingettes, papier toilette</div>
+          <div class="card card--inset checklist-item">
+            <div class="checklist-icon"><span class="icon icon-roll" aria-hidden="true"></span></div>
+            <div>Lingettes, papier toilette</div>
           </div>
-          <div class="checklist-item">
-            <div class="checklist-icon">🔪</div>
-            <div class="checklist-text">Couteau de poche (en soute)</div>
+          <div class="card card--inset checklist-item">
+            <div class="checklist-icon"><span class="icon icon-knife" aria-hidden="true"></span></div>
+            <div>Couteau de poche (en soute)</div>
           </div>
-          <div class="checklist-item">
-            <div class="checklist-icon">🛍️</div>
-            <div class="checklist-text">Sacs plastiques étanches</div>
+          <div class="card card--inset checklist-item">
+            <div class="checklist-icon"><span class="icon icon-bag" aria-hidden="true"></span></div>
+            <div>Sacs plastiques étanches</div>
           </div>
-          <div class="checklist-item">
-            <div class="checklist-icon">🛡️</div>
-            <div class="checklist-text">Couverture de survie</div>
+          <div class="card card--inset checklist-item">
+            <div class="checklist-icon"><span class="icon icon-shield" aria-hidden="true"></span></div>
+            <div>Couverture de survie</div>
           </div>
-          <div class="checklist-item">
-            <div class="checklist-icon">🔦</div>
-            <div class="checklist-text">Lampe frontale + piles</div>
+          <div class="card card--inset checklist-item">
+            <div class="checklist-icon"><span class="icon icon-flashlight" aria-hidden="true"></span></div>
+            <div>Lampe frontale + piles</div>
           </div>
-          <div class="checklist-item">
-            <div class="checklist-icon">👜</div>
-            <div class="checklist-text">Pochette antivol</div>
+          <div class="card card--inset checklist-item">
+            <div class="checklist-icon"><span class="icon icon-wallet" aria-hidden="true"></span></div>
+            <div>Pochette antivol</div>
           </div>
-          <div class="checklist-item">
-            <div class="checklist-icon">🛂</div>
-            <div class="checklist-text">Passeport, visa</div>
+          <div class="card card--inset checklist-item">
+            <div class="checklist-icon"><span class="icon icon-passport" aria-hidden="true"></span></div>
+            <div>Passeport, visa</div>
           </div>
-          <div class="checklist-item">
-            <div class="checklist-icon">💉</div>
-            <div class="checklist-text">Carnet de vaccination</div>
+          <div class="card card--inset checklist-item">
+            <div class="checklist-icon"><span class="icon icon-syringe" aria-hidden="true"></span></div>
+            <div>Carnet de vaccination</div>
           </div>
-          <div class="checklist-item">
-            <div class="checklist-icon">💳</div>
-            <div class="checklist-text">Devises, carte bancaire</div>
+          <div class="card card--inset checklist-item">
+            <div class="checklist-icon"><span class="icon icon-credit-card" aria-hidden="true"></span></div>
+            <div>Devises, carte bancaire</div>
           </div>
-          <div class="checklist-item">
-            <div class="checklist-icon">📄</div>
-            <div class="checklist-text">Assurance et documents personnels</div>
+          <div class="card card--inset checklist-item">
+            <div class="checklist-icon"><span class="icon icon-file" aria-hidden="true"></span></div>
+            <div>Assurance et documents personnels</div>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Nos derniers conseils -->
     <div id="conseils" class="info-section">
       <h2>Nos derniers conseils</h2>
-      <div class="info-content">
+      <div class="card info-content">
         <ul>
           <li>Emportez en cabine l’essentiel pour les premiers jours (retards de bagages possibles)</li>
           <li>Placez tout objet coupant ou briquet en soute</li>
@@ -278,71 +341,34 @@
         </ul>
       </div>
     </div>
-</section>
-
-
+</div></section>
 
   </main>
+  <!-- Bandeau newsletter (bas de page) -->
   <section class="newsletter-section">
     <div class="newsletter-container">
-      <div class="newsletter-content">
+      <div>
         <h2 class="newsletter-title">Restez informé</h2>
         <p class="newsletter-subtitle">Recevez nos actualités et événements directement dans votre boîte mail</p>
 
-        <!-- Message de confirmation -->
-        <div id="newsletter-message" class="newsletter-message" style="display: none;"></div>
-
-        <form class="newsletter-form" action="https://formsubmit.co/asmaalaurent@gmail.com" method="POST">
+        <form class="newsletter-form" data-success="Merci pour votre abonnement ! Nous vous enverrons nos prochaines actualités très bientôt." action="https://formsubmit.co/asmaalaurent@gmail.com" method="POST">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_subject" value="Nouvel abonnement à la newsletter Graine de Baobab">
           <input type="hidden" name="_autoresponse" value="Merci pour votre abonnement à notre newsletter! Nous vous enverrons nos prochaines actualités très bientôt.">
 
           <div class="newsletter-form-group">
-            <input type="email" class="newsletter-input" placeholder="Votre adresse email" name="email" required>
+            <label for="newsletter-email" class="visually-hidden">Votre adresse email</label>
+            <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Votre adresse email" name="email" required>
             <button type="submit" class="newsletter-button">S'abonner</button>
           </div>
+          <p class="form-status" role="status"></p>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- JavaScript pour gérer l'envoi du formulaire -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const newsletterForm = document.querySelector('.newsletter-form');
-      if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          const form = e.target;
-          const emailInput = form.querySelector('.newsletter-input');
-          const messageElement = document.getElementById('newsletter-message');
-
-          messageElement.innerHTML = '<i class="fas fa-spinner fa-spin" style="font-size: 1.5rem; margin-right: 10px; color: var(--brand-green);"></i> Envoi en cours...';
-          messageElement.style.display = 'block';
-
-          fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form)
-          })
-          .then(response => {
-            if (response.ok) {
-              messageElement.innerHTML = '<i class="fas fa-check-circle" style="font-size: 1.5rem; margin-right: 10px; color: var(--brand-green);"></i> Merci pour votre abonnement ! Nous vous enverrons nos prochaines actualités très bientôt.';
-              messageElement.classList.add('success');
-              emailInput.value = '';
-            } else {
-              throw new Error('Erreur lors de l\'envoi');
-            }
-          })
-          .catch(error => {
-            messageElement.innerHTML = '<i class="fas fa-exclamation-circle" style="font-size: 1.5rem; margin-right: 10px; color: #d32f2f;"></i> Oops ! Une erreur est survenue. Veuillez réessayer plus tard.';
-            messageElement.classList.add('error');
-            console.error('Error:', error);
-          });
-        });
-      }
-    });
-  </script>
-
-  <script src="js/navbar.js"></script>
+  <!-- Scripts : formulaires (newsletter, contact) puis menu -->
+  <script src="js/formulaires.js"></script>
+  <script src="js/navigation.js"></script>
 </body>
 </html>

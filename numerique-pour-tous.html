@@ -2,48 +2,98 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Numérique pour tous au Bénin | Formation informatique – Graine de Baobab</title>
   <meta name="description" content="Le programme Numérique pour tous de Graine de Baobab forme les jeunes et femmes du nord du Bénin aux outils numériques pour favoriser leur insertion professionnelle.">
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/logo-baobab.png">
+
+  <!-- Polices (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Inter:wght@400;600;700&display=swap">
+
+  <!-- Styles : les couleurs et polices se règlent dans css/variables.css -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/icons.css">
 </head>
 <body>
-  <nav class="site-nav" aria-label="Navigation principale">
-    <div class="nav-container">
-      <a class="brand" href="index.html"><img src="images/logo-baobab.png" alt="Graine de Baobab" class="logo"></a>
-      <ul class="nav-menu" id="nav-menu">
-        <li class="nav-item dropdown"><button class="dropbtn">Nous connaître</button><ul class="dropdown-menu"><li><a href="notre-equipe.html">Notre équipe</a></li><li><a href="notre-histoire.html">Notre histoire</a></li></ul></li>
-        <li class="nav-item dropdown"><button class="dropbtn">Nos actions</button><ul class="dropdown-menu"><li><a href="insecurite-alimentaire.html">Insécurité alimentaire</a></li><li><a href="insertion-professionnelle.html">Insertion professionnelle</a></li><li><a href="numerique-pour-tous.html">Numérique pour tous</a></li></ul></li>
-        <li class="nav-item dropdown"><button class="dropbtn">Le Bénin</button><ul class="dropdown-menu"><li><a href="infos-pratiques.html">Infos pratiques</a></li><li><a href="tourisme-solidaire.html">Tourisme solidaire</a></li></ul></li>
-        <li class="nav-item dropdown"><button class="dropbtn">S'engager</button><ul class="dropdown-menu"><li><a href="https://www.helloasso.com/associations/ong-graine-de-baobab#donation" target="_blank" rel="noopener noreferrer">Faire un don</a></li><li><a href="nous-rejoindre.html">Nous rejoindre</a></li></ul></li>
-      </ul>
-      <div class="nav-ctas"><a class="btn btn-success" href="https://www.helloasso.com/associations/ong-graine-de-baobab#donation" target="_blank" rel="noopener noreferrer">Faire un don</a><a class="btn btn-primaryhref="contact.html">Nous contacter</a></div>
-      <button class="nav-toggle" aria-label="Ouvrir le menu">☰</button>
-    </div>
-  </nav>
-  <main>
-    <section class="section section--light" style="padding-top: 0;">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- ===== En-tête et menu (identique sur toutes les pages) ===== -->
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Navigation principale">
+      <div class="nav-container">
+        <a class="brand" href="index.html">
+          <img src="images/logo-baobab.png" alt="Graine de Baobab, retour à l'accueil" class="logo" width="328" height="280">
+        </a>
+
+        <!-- Bouton ☰ (visible sur téléphone et tablette) -->
+        <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-controls="nav-menu" aria-expanded="false">☰</button>
+
+        <div class="nav-panel" id="nav-menu">
+          <button type="button" class="nav-close" aria-label="Fermer le menu">✕</button>
+
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <button type="button" class="dropbtn" aria-expanded="false">Nous connaître</button>
+              <ul class="dropdown-menu">
+                <li><a href="notre-equipe.html">Notre équipe</a></li>
+                <li><a href="notre-histoire.html">Notre histoire</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="dropbtn" aria-expanded="false">Nos actions</button>
+              <ul class="dropdown-menu">
+                <li><a href="insecurite-alimentaire.html">Insécurité alimentaire</a></li>
+                <li><a href="insertion-professionnelle.html">Insertion professionnelle</a></li>
+                <li><a href="numerique-pour-tous.html">Numérique pour tous</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="dropbtn" aria-expanded="false">Le Bénin</button>
+              <ul class="dropdown-menu">
+                <li><a href="infos-pratiques.html">Infos pratiques</a></li>
+                <li><a href="tourisme-solidaire.html">Tourisme solidaire</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="dropbtn" aria-expanded="false">S'engager</button>
+              <ul class="dropdown-menu">
+                <li><a href="https://www.helloasso.com/associations/ong-graine-de-baobab#donation" target="_blank" rel="noopener noreferrer">Faire un don</a></li>
+                <li><a href="nous-rejoindre.html">Nous rejoindre</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="nav-ctas">
+            <a class="btn btn-secondary" href="https://www.helloasso.com/associations/ong-graine-de-baobab#donation" target="_blank" rel="noopener noreferrer">Faire un don</a>
+            <a class="btn btn-primary" href="contact.html">Nous contacter</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="contenu">
+    <!-- Numérique pour tous -->
+    <section class="section section--light section--intro">
       <div class="section-content">
-        <h1 class="hero-title" style="font-family: 'Playfair Display', Georgia, serif; color: #5e3023; font-weight: 900; font-size: 3.5rem; letter-spacing: 0.125rem; margin: 0 0 0rem;">Numérique pour tous
+        <h1 class="hero-title">Numérique pour tous
         </h1>
-        <br>
         <p>
          Graine de Baobab réduit la fracture numérique au nord du Bénin en offrant aux jeunes peu ou pas instruits des formations en informatique et internet. Le projet « Numérique pour tous » vise à développer des compétences essentielles pour l’emploi, la formation et l’entrepreneuriat.
         </p>
       </div>
     </section>
-    <section class="section section--dark">
-      <section class="education-project" style="padding-top: 0px;">
+    <!-- Objet : Projet de Développement des Compétences Numériques des Jeun… -->
+    <section class="section section--alt">
+      <section class="container">
         <!-- Objet -->
         <div class="nutrition-content">
-          <div class="nutrition-text">
-            <h3>Objet: Projet de Développement des Compétences Numériques des Jeunes Peu ou Pas Instruits au Bénin</h3>
-            <p>
-              Graine de Baobab - Solidarité France Bénin offre une seconde chance éducative aux jeunes et adultes défavorisés, âgés de 15 à 35 ans, issus de familles très pauvres (semi-lettrés ou illettrés), qui souhaitent reprendre leurs études. Grâce à des cours du soir organisés dans des écoles créées à cet effet au Bénin, l’association accompagne des personnes motivées, souvent confrontées à des refus d’embauche ou à des échecs aux examens nationaux, faute de diplôme ou de niveau scolaire suffisant.
-            </p>
-            <p>
-              En 2018, les cours du soir de Graine de Baobab ont été reconnus par l’État béninois en tant qu’Université Populaire (ce statut marque une reconnaissance officielle du travail de GdB, mais ne donne malheureusement lieu à aucune subvention). De 2015 à 2024, l’Université Populaire de Graine de Baobab a permis à plus de 1 000 jeunes d’être formés et à des centaines d’obtenir un diplôme.
-            </p>
+          <div>
+            <h3>Objet : Projet de Développement des Compétences Numériques des Jeunes Peu ou Pas Instruits au Bénin</h3>
           </div>
         </div>
         <div class="project-intro">
@@ -52,25 +102,25 @@
     </p>
   </div>
 
-  <div class="project-details">
-    <div class="detail-card">
-      <div class="detail-icon">💻</div>
+  <div class="grid grid--wide">
+    <div class="card detail-card">
+      <div class="detail-icon"><span class="icon icon-laptop icon--lg" aria-hidden="true"></span></div>
       <h3>Organisation</h3>
       <p>
         La formation a été dispensée par le bénévole français Laurent Cochereau (trésorier de l’association) avec l’appui de l’équipe qui organise les cours du soir.
       </p>
     </div>
 
-    <div class="detail-card">
-      <div class="detail-icon">👥</div>
+    <div class="card detail-card">
+      <div class="detail-icon"><span class="icon icon-users icon--lg" aria-hidden="true"></span></div>
       <h3>Participation</h3>
       <p>
         Au total, 48 jeunes ont acquis des connaissances de base en informatique et internet.
       </p>
     </div>
 
-    <div class="detail-card">
-      <div class="detail-icon">📅</div>
+    <div class="card detail-card">
+      <div class="detail-icon"><span class="icon icon-calendar icon--lg" aria-hidden="true"></span></div>
       <h3>Calendrier</h3>
       <p>
         Cette initiative se poursuivra en 2025 pour leur permettre d’obtenir un diplôme de fin de formation.
@@ -78,10 +128,10 @@
     </div>
   </div>
 
-  <div class="project-challenges">
+  <div>
     <h3>Défis et Solutions</h3>
-    <div class="challenge-item">
-      <div class="challenge-icon">💡</div>
+    <div class="card challenge-item">
+      <div class="challenge-icon"><span class="icon icon-lightbulb" aria-hidden="true"></span></div>
       <div class="challenge-content">
         <h4>Manque d'Équipements</h4>
         <p>
@@ -90,8 +140,8 @@
       </div>
     </div>
 
-    <div class="challenge-item">
-      <div class="challenge-icon">⭐</div>
+    <div class="card challenge-item">
+      <div class="challenge-icon"><span class="icon icon-star" aria-hidden="true"></span></div>
       <div class="challenge-content">
         <h4>Appréciation des Participants</h4>
         <p>
@@ -101,67 +151,33 @@
     </div>
   </div>
 </section>
+</section>
 </main>
+  <!-- Bandeau newsletter (bas de page) -->
   <section class="newsletter-section">
     <div class="newsletter-container">
-      <div class="newsletter-content">
+      <div>
         <h2 class="newsletter-title">Restez informé</h2>
         <p class="newsletter-subtitle">Recevez nos actualités et événements directement dans votre boîte mail</p>
 
-        <!-- Message de confirmation -->
-        <div id="newsletter-message" class="newsletter-message" style="display: none;"></div>
-
-        <form class="newsletter-form" action="https://formsubmit.co/asmaalaurent@gmail.com" method="POST">
+        <form class="newsletter-form" data-success="Merci pour votre abonnement ! Nous vous enverrons nos prochaines actualités très bientôt." action="https://formsubmit.co/asmaalaurent@gmail.com" method="POST">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_subject" value="Nouvel abonnement à la newsletter Graine de Baobab">
           <input type="hidden" name="_autoresponse" value="Merci pour votre abonnement à notre newsletter! Nous vous enverrons nos prochaines actualités très bientôt.">
 
           <div class="newsletter-form-group">
-            <input type="email" class="newsletter-input" placeholder="Votre adresse email" name="email" required>
+            <label for="newsletter-email" class="visually-hidden">Votre adresse email</label>
+            <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Votre adresse email" name="email" required>
             <button type="submit" class="newsletter-button">S'abonner</button>
           </div>
+          <p class="form-status" role="status"></p>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- JavaScript pour gérer l'envoi du formulaire -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const newsletterForm = document.querySelector('.newsletter-form');
-      if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          const form = e.target;
-          const emailInput = form.querySelector('.newsletter-input');
-          const messageElement = document.getElementById('newsletter-message');
-
-          messageElement.innerHTML = '<i class="fas fa-spinner fa-spin" style="font-size: 1.5rem; margin-right: 10px; color: var(--brand-green);"></i> Envoi en cours...';
-          messageElement.style.display = 'block';
-
-          fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form)
-          })
-          .then(response => {
-            if (response.ok) {
-              messageElement.innerHTML = '<i class="fas fa-check-circle" style="font-size: 1.5rem; margin-right: 10px; color: var(--brand-green);"></i> Merci pour votre abonnement ! Nous vous enverrons nos prochaines actualités très bientôt.';
-              messageElement.classList.add('success');
-              emailInput.value = '';
-            } else {
-              throw new Error('Erreur lors de l\'envoi');
-            }
-          })
-          .catch(error => {
-            messageElement.innerHTML = '<i class="fas fa-exclamation-circle" style="font-size: 1.5rem; margin-right: 10px; color: #d32f2f;"></i> Oops ! Une erreur est survenue. Veuillez réessayer plus tard.';
-            messageElement.classList.add('error');
-            console.error('Error:', error);
-          });
-        });
-      }
-    });
-  </script>
-
-  <script src="js/navbar.js"></script>
+  <!-- Scripts : formulaires (newsletter, contact) puis menu -->
+  <script src="js/formulaires.js"></script>
+  <script src="js/navigation.js"></script>
 </body>
 </html>

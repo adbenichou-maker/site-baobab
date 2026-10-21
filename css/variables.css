@@ -1,0 +1,62 @@
+/* ==========================================================================
+   VARIABLES — tous les choix de design du site sont ici.
+   Pour changer une couleur, une police ou un espacement : modifie la valeur
+   ci-dessous, le changement s'applique automatiquement sur tout le site.
+   ========================================================================== */
+
+:root {
+  /* ----- Couleurs ----- */
+  --color-cream: #FAF6EE;            /* fond des pages */
+  --color-sand: #F1E8D8;             /* fond des sections alternées */
+  --color-white: #FFFFFF;            /* fond des cartes */
+  --color-brown: #4A2C17;            /* titres, éléments sombres */
+  --color-text: #3B342D;             /* texte courant */
+  --color-muted: #5B5249;            /* texte secondaire */
+  --color-terracotta: #A8552A;       /* couleur d'accent (boutons principaux) */
+  --color-terracotta-dark: #8C4421;  /* accent au survol */
+  --color-terracotta-soft: #F6E4DA;  /* fond clair d'accent */
+  --color-green: #3F6B3A;            /* vert baobab (don, liens, positif) */
+  --color-green-dark: #2F5230;       /* vert au survol */
+  --color-green-soft: #E6EFE3;       /* fond clair vert */
+  --color-error: #9B2C2C;            /* messages d'erreur */
+  --color-border: #E4D9C6;           /* traits et bordures discrètes */
+
+  /* ----- Polices ----- */
+  --font-title: 'Fraunces', Georgia, serif;
+  --font-text: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* ----- Tailles de texte (s'adaptent toutes seules à l'écran) ----- */
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.375rem;
+  --text-2xl: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);   /* titres h2 */
+  --text-3xl: clamp(2rem, 1.4rem + 3vw, 3.5rem);        /* titre h1 */
+
+  /* ----- Espacements ----- */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --section-padding: clamp(2.5rem, 6vw, 4.5rem);  /* espace haut/bas des sections */
+  --gutter: clamp(1rem, 4vw, 2rem);               /* marge gauche/droite de la page */
+
+  /* ----- Largeurs ----- */
+  --max-width: 70rem;       /* largeur maximale du contenu large */
+  --max-width-text: 52rem;  /* largeur maximale des textes */
+
+  /* ----- Formes ----- */
+  --radius-sm: 0.5rem;
+  --radius: 0.875rem;
+  --radius-pill: 999px;
+  --shadow-sm: 0 2px 10px rgba(74, 44, 23, 0.08);
+  --shadow: 0 10px 30px rgba(74, 44, 23, 0.12);
+
+  /* ----- Points de rupture (rappel) -----
+     Les variables CSS ne marchent pas dans les @media, donc les valeurs
+     sont écrites directement dans les fichiers :
+       tablette : 48rem  (768 px)
+       ordinateur : 64rem (1024 px)
+       menu en barre horizontale : 981 px (voir layout.css) */
+}

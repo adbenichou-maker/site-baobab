@@ -1,0 +1,111 @@
+/* ==========================================================================
+   BASE — styles de départ : texte, titres, liens, images, accessibilité.
+   (Rien de spécifique à une page ou à un composant ici.)
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--color-text);
+  background: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ----- Titres ----- */
+h1, h2, h3, h4 {
+  font-family: var(--font-title);
+  color: var(--color-brown);
+  line-height: 1.2;
+  margin: 0 0 var(--space-sm);
+}
+
+h1 { font-size: var(--text-3xl); font-weight: 700; }
+h2 { font-size: var(--text-2xl); font-weight: 700; }
+h3 { font-size: var(--text-xl); font-weight: 600; }
+h4 { font-size: var(--text-lg); font-weight: 600; }
+
+p {
+  margin: 0 0 var(--space-sm);
+}
+
+/* Un titre h2 qui suit un bloc garde de l'air au-dessus */
+main * + h2 {
+  margin-top: var(--space-xl);
+}
+
+/* ----- Liens ----- */
+a {
+  color: var(--color-green);
+}
+
+a:hover {
+  color: var(--color-green-dark);
+}
+
+/* ----- Listes (sans puces, comme avant) ----- */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+main li {
+  margin-bottom: 0.5rem;
+}
+
+/* ----- Images ----- */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ----- Accessibilité : contour visible quand on navigue au clavier ----- */
+:focus-visible {
+  outline: 3px solid var(--color-terracotta);
+  outline-offset: 3px;
+}
+
+/* Les ancres (#budget, #sante…) ne se cachent pas sous le menu fixe */
+[id] {
+  scroll-margin-top: 6rem;
+}
+
+/* ----- Texte caché à l'écran mais lu par les lecteurs d'écran (étiquettes) ----- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ----- Petits utilitaires d'alignement ----- */
+.text-center { text-align: center; }
+
+/* ----- Respect des personnes qui réduisent les animations ----- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
