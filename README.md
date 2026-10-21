@@ -33,7 +33,8 @@ site-baobab/
 │  ├─ navigation.js    Menu : ouverture du tiroir mobile et des sous-menus
 │  └─ formulaires.js   Envoi du formulaire de contact et de la newsletter
 │
-├─ images/             Photos (format WebP) et logo
+├─ favicon.ico         Petite icône de l'onglet et de Google (emblème du logo, carré)
+├─ images/             Photos (format WebP), logo et icônes (favicon-192.png, apple-touch-icon.png)
 ├─ CNAME               Nom de domaine du site (grainedebaobabong.eu) : ne pas supprimer
 └─ README.md           Ce fichier
 ```
@@ -129,6 +130,11 @@ Quand tu as le contenu, remplace-le ou supprime ce paragraphe.
    - `loading="lazy"` : l'image ne se charge que quand on arrive dessus. Ne le mets pas sur la toute première image de la page.
 
 Le logo est `images/logo-baobab.png` : garde ses proportions, ne l'étire pas.
+
+**Icône de l'onglet et de Google :** `favicon.ico`, `images/favicon-192.png` et
+`images/apple-touch-icon.png` sont des versions **carrées** de l'emblème du logo (sans
+le texte, illisible en petit). Pour les remplacer, garde des images carrées (au moins
+48 x 48 px, idéalement 192 x 192) et le même nom de fichier.
 
 > Les anciennes photos (non utilisées sur le site) ont été sauvegardées hors du projet,
 > dans `~/Documents/site-baobab-images-sauvegarde/`. Elles restent aussi dans l'historique Git.
